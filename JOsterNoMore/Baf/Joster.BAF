@@ -1,0 +1,12 @@
+IF
+	Global("JOJosterGetPaid","GLOBAL",2)
+	Global("JOJosterLeave","GLOBAL",0)
+	See(Player1)
+THEN
+	RESPONSE #100
+        Wait(2)	
+		SetGlobal("CDJoster","AR0522",0)
+        Wait(5)	
+		StartDialogueNoSet(Player1)
+		SetGlobal("JOJosterGoBackNow","GLOBAL",1)
+END

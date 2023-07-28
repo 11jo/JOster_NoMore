@@ -1,0 +1,7 @@
+IF
+  Global("JOBiffIsHere","GLOBAL",0)
+THEN
+  RESPONSE #100
+	CreateCreature("JOJoster",[798.214],15)
+	SetGlobal("JOBiffIsHere","GLOBAL",1)
+END

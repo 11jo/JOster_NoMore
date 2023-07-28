@@ -1,0 +1,75 @@
+IF
+  See([PC])
+  Global("JOJosterGoBackNow","GLOBAL",1)
+THEN
+  RESPONSE #100
+	DisplayStringHead(Myself,@3001)
+END
+
+IF
+  AreaCheck("AR0322")
+  See([PC])
+  !Global("JOJosterGoBackNow","GLOBAL",1)
+  !Global("JOJosterGetPaid","GLOBAL",1)
+  Global("JOJosterBiffIsHere","GLOBAL",2)
+  RealGlobalTimerExpired("JOJosterShowOff","GLOBAL")
+THEN
+  RESPONSE #20
+	DisplayStringHead(Myself,@3004)
+	RealSetGlobalTimer("JOJosterShowOff","GLOBAL",20)
+  RESPONSE #20
+	DisplayStringHead(Myself,@3005)
+	RealSetGlobalTimer("JOJosterShowOff","GLOBAL",20)
+  RESPONSE #20
+	DisplayStringHead(Myself,@3006)
+	RealSetGlobalTimer("JOJosterShowOff","GLOBAL",20)
+  RESPONSE #20
+	DisplayStringHead(Myself,@3007)
+	RealSetGlobalTimer("JOJosterShowOff","GLOBAL",20)
+  RESPONSE #20
+	DisplayStringHead(Myself,@3008)
+	RealSetGlobalTimer("JOJosterShowOff","GLOBAL",20)
+END
+
+IF
+  !AreaCheck("AR0322")
+  See([PC])
+  Global("JOJosterGetPaid","GLOBAL",0)
+  Global("JOJosterLeave","GLOBAL",0)
+THEN
+  RESPONSE #100
+	DisplayStringHead(Myself,@3003)
+    FaceObject(Player1(Myself))
+	Wait(2)
+	DisplayStringHead(Myself,@3000)
+	Wait(3)
+	SetGlobal("JOJosterGetPaid","GLOBAL",1)
+	ReallyForceSpell(Myself,DRYAD_TELEPORT)
+	ReallyForceSpell(Player1,DRYAD_TELEPORT)
+END
+
+IF
+  !AreaCheck("AR0322")
+  !Global("JOJosterLeave","GLOBAL",0)
+  Global("JOJosterHasSpoken","GLOBAL",0)
+THEN
+  RESPONSE #100
+	Wait(1)	
+	DisplayStringHead(Myself,@3002)
+    SetGlobal("JOJosterHasSpoken","GLOBAL",1)
+	Wait(4)	
+	DisplayStringHead(Myself,@3001)
+	ReallyForceSpell(Myself,DRYAD_TELEPORT)
+	Wait(4)	
+    SetGlobal("JOJosterHasSpoken","GLOBAL",0)
+END
+
+IF
+  AreaCheck("AR0322")
+  See([PC])
+  Global("JOJosterBiffIsHere","GLOBAL",1)
+THEN
+  RESPONSE #100
+	StartDialogue("JOJoster",[PC])
+END
+

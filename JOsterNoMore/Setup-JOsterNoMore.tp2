@@ -1,0 +1,123 @@
+BACKUP ~JOsterNoMore/backup~ 
+SUPPORT ~~
+README ~~
+
+VERSION ~1.0~
+
+ALWAYS
+
+
+    //Copies tra files into the autotra-folder (to leave the originals untouched)
+    DEFINE_ACTION_FUNCTION autotra_workaround BEGIN
+      COPY ~JOsterNoMore/Tra/english~				~JOsterNoMore/Tra/autotra/%LANGUAGE%~
+      COPY ~JOsterNoMore/Tra/%LANGUAGE%~					~JOsterNoMore/Tra/autotra/%LANGUAGE%~
+    END
+
+    LAF autotra_workaround END
+
+
+//  ACTION_DEFINE_ARRAY fl#noconvert BEGIN END
+
+ ACTION_DEFINE_ARRAY fl#reload BEGIN SETUP-JOsterNoMore END
+
+    LAF HANDLE_CHARSETS
+      INT_VAR
+        infer_charsets = 1
+      STR_VAR
+        tra_path = EVAL ~JOsterNoMore/Tra/autotra~
+//        noconvert_array = fl#noconvert
+        reload_array = fl#reload
+				
+ END
+END
+
+// AUTO_TRA ~JOsterNoMore/Tra/autotra/%s/D~
+		 
+LANGUAGE ~Francais~
+         ~French~
+         ~JOsterNoMore/Tra/French/SETUP-JOsterNoMore.tra~
+
+LANGUAGE ~English~
+         ~english~
+         ~JOsterNoMore/Tra/English/SETUP-JOsterNoMore.tra~
+
+
+///////////////////////////////////
+// Start JOsterNoMore
+//////////////////////////////////
+
+
+BEGIN @0
+DESIGNATED 0 
+LABEL ~JOsterNoMore-11jo~
+REQUIRE_PREDICATE GAME_IS ~bg2 bgt bg2ee eet~ @1
+FORBID_COMPONENT ~Setup-JOsterNoMore~ ~0~ @2
+
+///////////// Bam
+
+
+ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+	INCLUDE ~JOsterNoMore/Lib/gw_convert_inventory_bam_to_ee.tpa~			// Loads function converting inventory BAMs to EE.
+	//OUTER_SPRINT file-exc ~PEIRBOW1 PEIRSL1H PEIRSL1S PEIRSL1B PEIRBOP1 PEIRMARO~	// Special cases: unused inventory or description icons, and ability .bam don't need to be converted.
+	ACTION_BASH_FOR ~JOsterNoMore/Bam/~ ~^.+\.bam$~ BEGIN
+		ACTION_TO_LOWER %BASH_FOR_FILE%
+		ACTION_TO_LOWER %BASH_FOR_RES%
+		ACTION_IF (~%file-exc%~ STRING_CONTAINS_REGEXP ~%BASH_FOR_RES%~ = 1) BEGIN
+			COPY ~%BASH_FOR_FILESPEC%~ ~override/%BASH_FOR_FILE%~
+				LPF ~gw_convert_inventory_bam_to_ee~ END
+			BUT_ONLY
+		END ELSE BEGIN
+			COPY ~%BASH_FOR_FILESPEC%~ ~override/%BASH_FOR_FILE%~
+		END
+	END
+END ELSE BEGIN
+	COPY ~JOsterNoMore/bam~ ~override~
+END
+
+///////////// Creature
+
+
+	COPY ~JOsterNoMore/Cre/JOJOSTER.CRE~			~override/JOJOSTER.CRE~
+  SAY NAME1 @100
+  SAY NAME2 @100
+  WRITE_ASCII 0x248 ~JOJoster~ (8) // Override script
+  WRITE_ASCII 0x280 ~JOJoster~ (8) // Script name / Death variable
+  WRITE_ASCII 0x2CC ~JOJoster~ (8) // Dialog name
+  
+  
+///////////// Item
+ 
+ 
+	COPY ~JOsterNoMore/Itm/JOJOSTER.ITM~			~override/JOJOSTER.ITM~
+  SAY NAME1 @101
+  SAY NAME2 @101 
+  SAY UNIDENTIFIED_DESC @102
+  SAY DESC @102 
+  WRITE_ASCII 0x3a ~JOJoster~ (8) // Bam name
+  
+  
+///////////// Effect  
+  
+  
+  	COPY ~JOsterNoMore/Eff/JOJOSTER.EFF~			~override/JOJOSTER.EFF~
+
+
+///////////// Dlg
+
+
+	COMPILE ~JOsterNoMore/Dlg/JOJOSTER.D~	~override~
+
+
+///////////// Baf
+  
+	EXTEND_BOTTOM ~BALDUR.BCS~				~JOsterNoMore/Baf/JOBaldur.BAF~
+  
+	EXTEND_BOTTOM ~BALDUR25.BCS~				~JOsterNoMore/Baf/JOBaldur.BAF~
+	
+	EXTEND_BOTTOM ~AR0322.BCS~				~JOsterNoMore/Baf/JOAR0322.BAF~
+	
+	COMPILE ~JOsterNoMore/Baf/JOJoster.baf~	~override~
+	
+	EXTEND_BOTTOM ~JOSTER.BCS~				~JOsterNoMore/Baf/Joster.BAF~
+	
+

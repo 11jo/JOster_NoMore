@@ -1,0 +1,140 @@
+// TP2
+
+
+@0 = ~Installer "JOsterNoMore"~
+@1 = ~Ce mod necessite l'installation de BG2ToB / BGT ou BG2EE / EET~
+@2 = ~Une autre version de "JOsterNoMore" est deja installee~
+
+
+// OTHER
+
+
+@100 = ~Voleur de la Guilde de <CHARNAME>~
+@101 = ~Obole des voleurs de l'ombre~
+@102 = ~Ce bol permet aux membres des voleurs de l'ombre de régler leurs comptes... malgré de longues distances ou des préoccupations plus pressantes.~
+@103 = ~Biff, le voleur de l'ombre~
+
+
+// DIALOG
+
+
+@1001 = ~Salut patron... vous préférez peut-être qu'on vous donne du monsieur ?~ ~Salut patronne... vous préférez peut-être qu'on vous donne du madame ?~
+@1002 = ~Mon nom est <CHARNAME> mais tu peux m'appeler comme ça te chante, tant que tu ne me manque pas de respect.~ // Charname
+@1003 = ~À vos ordre monsieur ! Heu, patron, chef...  Patron <CHARNAME> !~ ~À vos ordre madame ! Heu, patronne, cheffe...  Patronne <CHARNAME> !~
+@1004 = ~Et toi, quel est ton nom recrue ?~ // Charname
+@1005 = ~Je suis Biff, le voleur de l'ombre ! J'ai le même prénom que mon cousin mais lui il est... heu comment dire... Inculte.~
+@1006 = ~Très bien Biff, le voleur de l'ombre. Que me veux-tu ?~ // Charname
+@1007 = ~Oh ! Oui, je suis venu vous remettre l'Obole des voleurs, patron~ ~Oh ! Oui, je suis venu vous remettre l'Obole des voleurs, patronne~
+@1008 = ~Pardon ?~ // Charname
+@1009 = ~Ce bol vous permettra de revenir instantanément à la guilde afin de régler votre tribut à la guilde.~
+@1010 = ~Je vois, Renal ne perds pas temps. C'est donc un moyen de transport jusqu'à Atkhatla ?~
+@1011 = ~Oui et non, ces bols sont très courant dans nos activités et leur pouvoir est limité, l'Obole ne transportera que vous et pour un temps très limité, juste ce qu'il faut pour avoir une petite conversation avec Joster le collecteur de la guilde.~
+@1012 = ~Entendu, c'est un moyen comme un autre de garder la guilde sans avoir à m’inquiéter de la durée de mes voyages.~
+@1013 = ~Tout à fait patron.~ ~Tout à fait patronne.~
+@1014 = ~Il suffit de l'activer, cela me permettra de vous localiser et de venir vous chercher.~
+
+@2000 = ~Bon retour à la guilde patron~ ~Bon retour à la guilde patronne~
+
+
+@3000 = ~En avant <CHARNAME>... Heu, Chef !~ ~En avant <CHARNAME>... Heu, Cheffe !~
+@3001 = ~A bientôt patron !~ ~A bientôt patronne !~
+
+/* =============== *
+ *  WeiDU prompts  *
+ * =============== */
+@-1000= "Le mod %TP2_FILE_NAME% contient"
+@-1001= "composants optionnels distincts.
+Pour gagner du temps, vous pouvez choisir ce que vous souhaitez faire d'eux
+au niveau general plutot que de repondre aux questions pour chacun.
+"
+@-1002= "Que faut-il faire de tous les composants qui NE sont PAS ENCORE installes ?
+Les [I]nstaller, les [S]auter, dem[A]nder pour chacun ? "
+@-1003= "Que faut-il faire de tous les composants qui sont DEJA installes ?
+Les [R]einstaller, les s[U]pprimer, les [S]auter, dem[A]nder pour chacun ? "
+
+@-1004= "S'IL VOUS PLAIT, envoyez par e-mail le fichier"
+@-1005= "a"
+
+@-1006= "Installer le composant ["
+@-1007= "] ?
+[R]einstaller, co[N]server, s[U]pprimer ou [Q]uitter ? "
+@-1008= "] ?
+[I]nstaller, [N]e pas installer ou [Q]uitter ? "
+
+@-1009= "Entrez une partie du nom du module : "
+
+@-1010= "Reinstallation du composant ["
+@-1011= "] "
+@-1012= "Reinstallation dans la langue"
+
+@-1013= "Suppression de l'ancienne installation de ["
+@-1014= "] au prealable..."
+@-1015= "SUPPRESSION REUSSIE DE L'ANCIEN"
+
+@-1016= "Installation en cours"
+@-1017= "ERREUR pendant l'installation de ["
+@-1018= "], retour a l'etat anterieur"
+@-1019= "INSTALLATION REUSSIE"
+@-1020= "Saute"
+@-1021= "Suppression de ["
+@-1022= "] (composant #"
+@-1023= ")"
+@-1024= "SUPPRESSION REUSSIE DE ["
+
+@-1025= "] ?
+[R]einstaller, co[N]server, s[U]pprimer, [Q]uitter ou choisir un parmi :"
+@-1026= "] ?
+[N]e pas installer, [Q]uitter ou choisir un parmi :"
+@-1027= " (installe actuellement)"
+
+@-1028= "Souhaitez-vous afficher les composants de ["
+@-1029= "] ?
+[Y]Oui, [N]on ? "
+
+@-1030= "] ?
+choisir un parmi :"
+@-1031= "] ?
+[R]einstaller, co[N]server, [Q]uitter ou choisir un parmi :"
+@-1032= "INSTALLATION ECHOUEE A CAUSE D'ERREURS"
+@-1033= "INSTALLATION AVEC DES ALERTES"
+@-1034= "Souhaitez-vous afficher les instructions (ReadMe) ? [Y]Oui [N]on"
+@-1035= "Dans la langue"
+
+@-1036= "Saute le GROUPE ["
+@-1037= "] pour cause d'absence des pre-requis."
+
+@-1038= "dem[A]nder pour chaque composant, tout [S]auter, ou choisir une selection pre-definie :"
+@-1039= "dem[A]nder pour chaque composant, [R]einstaller la configuration courante, tout s[U]pprimer, tout [S]auter, ou choisir une selection pre-definie :"
+
+@-1040= "
+Veuillez choisir la langue dans laquelle vous souhaitez jouer au jeu.
+Si par la suite vous desirez jouer au jeu dans une langue differente, il vous
+faudra editer le fichier weidu.conf et reinstaller vos mods.
+"
+@-1041= "Tcheque"
+@-1042= "Allemand"
+@-1043= "Anglais"
+@-1044= "Espagnol"
+@-1045= "Francais"
+@-1046= "Italien"
+@-1047= "Polonais"
+@-1048= "Portugais"
+@-1049= "Turc"
+@-1050= "Japonais"
+@-1051= "Coreen"
+@-1052= "Chinois simplifie"
+@-1053= "Russe"
+@-1054= "Ukrainien"
+
+@-1060= "
+Ce jeu est disponible en plusieurs langues mais WeiDU ne sait pas laquelle a ete choisie quand ce mod a ete installe.
+
+Veuillez indiquer quelle langue du jeu a ete utilisee quand vous avez installe ce mod. Votre choix servira jusqu'a ce que WeiDU s'arrete mais ne sera pas memorise.
+"
+@-1061= "
+Utilisation de"
+@-1062= " et "
+
+@-1063= "INSTALLATION ABANDONNEE"
+@-1064= "Abandon de l'installation de ["
+@-1065= "], retour a l'etat anterieur"

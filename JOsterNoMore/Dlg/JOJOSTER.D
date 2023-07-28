@@ -1,0 +1,46 @@
+BEGIN ~JOJoster~
+
+IF ~NumTimesTalkedTo(0) See([PC]) Global("JOJosterBiffIsHere","GLOBAL",1)~ THEN BEGIN 0
+  SAY @1001
+  IF ~~ THEN REPLY @1002 GOTO 1
+END
+
+IF ~~ THEN BEGIN 1
+  SAY @1003
+  IF ~~ THEN REPLY @1004 GOTO 2
+END
+
+IF ~~ THEN BEGIN 2
+  SAY @1005
+  IF ~~ THEN REPLY @1006 GOTO 3
+END
+
+IF ~~ THEN BEGIN 3
+  SAY @1007
+  IF ~~ THEN REPLY @1008 GOTO 4
+END
+
+IF ~~ THEN BEGIN 4
+  SAY @1009
+  IF ~~ THEN REPLY @1010 GOTO 5
+END
+
+IF ~~ THEN BEGIN 5
+  SAY @1011
+  IF ~~ THEN REPLY @1012 GOTO 6
+END
+
+IF ~~ THEN BEGIN 6
+  SAY @1013
+  IF ~~ THEN GOTO 7
+END
+
+IF ~~ THEN BEGIN 7
+  SAY @1014
+  IF ~~ THEN DO ~GiveItemCreate("JOJoster",[PC],0,0,0) SetGlobal("JOJosterBiffIsHere","GLOBAL",2)~ EXIT
+END
+
+IF ~Global("JOJosterBiffIsHere","GLOBAL",2) AreaCheck("AR0322")~ THEN BEGIN JOJosterBiffIsHere
+  SAY @2000
+  IF ~~ THEN EXIT
+END

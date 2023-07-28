@@ -1,0 +1,42 @@
+
+IF
+  Global("JOJosterGetPaid","GLOBAL",1)
+THEN
+  RESPONSE #100
+    ClearAllActions()
+	Wait(3)
+    StorePartyLocations()
+    FadeToColor([30.0],0)
+    Wait(2)	
+    ActionOverride(Player1,LeaveAreaLUA("AR0322","",[578.365],50))
+    FadeFromColor([30.0],0)
+    SmallWait(1)	
+	MoveToCenterOfScreen(90)
+    ActionOverride(Player1,FaceObject("Joster"))
+    Wait(1)	
+	ReallyForceSpell("JOJoster",DRYAD_TELEPORT)
+	ReallyForceSpell(Player1,DRYAD_TELEPORT)
+    SetGlobal("JOJosterGetPaid","GLOBAL",2)
+    Continue()
+END
+
+
+IF
+  Global("JOJosterGoBackNow","GLOBAL",1)
+THEN
+  RESPONSE #100
+    ClearAllActions()
+	Wait(5)
+	ReallyForceSpell("JOJoster",DRYAD_TELEPORT)
+	ReallyForceSpell(Player1,DRYAD_TELEPORT)
+    FadeToColor([30.0],0)
+    CutSceneId(Player1)
+    Wait(4)
+	MoveToCenterOfScreen(90)
+    RestorePartyLocations()
+	MoveToCenterOfScreen(90)
+    FadeFromColor([30.0],0)
+	SetGlobal("JOJosterGoBackNow","GLOBAL",0)
+    SetGlobal("JOJosterGetPaid","GLOBAL",0)	
+    Continue()
+END
