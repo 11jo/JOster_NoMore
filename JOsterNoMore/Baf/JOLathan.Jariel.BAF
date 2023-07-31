@@ -1,0 +1,84 @@
+// Ama is dead
+
+IF
+  Global("JOJosterLathan","GLOBAL",2)
+THEN
+  RESPONSE #100
+	ActionOverride("shthlt02",DisplayStringHead("shthlt02",@6102))
+	Wait(3)
+    SetGlobal("JOJosterLathan","GLOBAL",3)
+END
+
+IF
+  Global("JOJosterLathan","GLOBAL",4)
+THEN
+  RESPONSE #100
+	ActionOverride("shthlt01",DisplayStringHead("shthlt01",@6104))
+    SetGlobal("JOJosterLathan","GLOBAL",5)
+END
+
+	// Routine / Jariel / Lathan
+
+// Lathan
+	
+IF
+  Global("JOJosterJarLath","GLOBAL",3)
+THEN
+  RESPONSE #100
+	ActionOverride("shthlt02",DisplayStringHead("shthlt02",@6001))
+	SetGlobal("JOJosterJarLath","GLOBAL",10)
+	Wait(3)
+	SetGlobal("JOJosterJarLath","GLOBAL",4)
+END
+	
+IF
+  Global("JOJosterJarLath","GLOBAL",4)
+THEN
+  RESPONSE #100
+	ActionOverride("shthlt02",DisplayStringHead("shthlt02",@6002))
+	SetGlobal("JOJosterJarLath","GLOBAL",10)
+	Wait(4)
+	SetGlobal("JOJosterJarLath","GLOBAL",5)
+END
+
+// Jariel
+
+IF
+  Global("JOJosterJarLath","GLOBAL",2)
+THEN
+  RESPONSE #100
+	ActionOverride("shthlt01",DisplayStringHead("shthlt01",@6000))
+	SetGlobal("JOJosterJarLath","GLOBAL",10)
+	Wait(4)
+	SetGlobal("JOJosterJarLath","GLOBAL",3)
+END
+	
+IF
+  Global("JOJosterJarLath","GLOBAL",6)
+THEN
+  RESPONSE #100
+	ActionOverride("shthlt01",DisplayStringHead("shthlt01",@6004))
+	SetGlobal("JOJosterJarLath","GLOBAL",10)
+	Wait(5)
+	SetGlobal("JOJosterJarLath","GLOBAL",7)
+END
+
+// Routine / Rattell
+
+IF
+  Global("JOJosterRattell","GLOBAL",1)
+THEN
+  RESPONSE #100
+	ActionOverride("shthstor",DisplayStringHead("shthstor",@6006))
+	Wait(2)
+	SetGlobal("JOJosterRattell","GLOBAL",2)
+END
+
+IF
+  Global("JOJosterRattell","GLOBAL",4)
+THEN
+  RESPONSE #100
+	ActionOverride("shthstor",DisplayStringHead("shthstor",@6007))
+	Wait(2)
+	SetGlobal("JOJosterRattell","GLOBAL",5)
+END

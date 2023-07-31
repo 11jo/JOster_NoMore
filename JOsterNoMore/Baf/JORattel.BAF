@@ -1,0 +1,40 @@
+// Routine / Rattell
+
+IF
+  Global("JOJosterRattell","GLOBAL",1)
+THEN
+  RESPONSE #100
+	Wait(2)
+	DisplayStringHead(Myself,@6006)
+	SetGlobal("JOJosterRattell","GLOBAL",2)
+END
+
+IF
+  Global("JOJosterRattell","GLOBAL",4)
+THEN
+  RESPONSE #100
+	Wait(2)
+	DisplayStringHead(Myself,@6007)
+	SetGlobal("JOJosterRattell","GLOBAL",5)
+END
+
+
+// One Biff
+
+IF
+  Global("JOJosOneBiff","GLOBAL",4)
+THEN
+  RESPONSE #100
+	DisplayStringHead(Myself,@6201)	
+	Wait(2)
+	SetGlobal("JOJosOneBiff","GLOBAL",5)
+END
+
+IF
+  Global("JOJosOneBiff","GLOBAL",9)
+THEN
+  RESPONSE #100
+	DisplayStringHead(Myself,@6206)	
+	Wait(2)
+	SetGlobal("JOJosOneBiff","GLOBAL",10)
+END

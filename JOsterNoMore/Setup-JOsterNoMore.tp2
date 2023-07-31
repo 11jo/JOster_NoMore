@@ -78,11 +78,29 @@ END
 
 
 	COPY ~JOsterNoMore/Cre/JOJOSTER.CRE~			~override/JOJOSTER.CRE~
+  SAY NAME1 @103
+  SAY NAME2 @103
+  WRITE_ASCII 0x248 ~JOJOSTER~ (8) // Override script
+  WRITE_ASCII 0x280 ~JOJoster~ (8) // Script name / Death variable
+  WRITE_ASCII 0x2CC ~JOJOSTER~ (8) // Dialog name
+  WRITE_ASCII 0x260 ~PGUILD~ (8) // General script
+
+	COPY ~JOsterNoMore/Cre/JOJOSBIS.CRE~			~override/JOJOSBIS.CRE~
+  SAY NAME1 @103
+  SAY NAME2 @103
+  WRITE_ASCII 0x248 ~JOJosBIS~ (8) // Override script
+  WRITE_ASCII 0x280 ~JOJosBIS~ (8) // Script name / Death variable
+  WRITE_ASCII 0x2CC ~JOJOSTER~ (8) // Dialog name
+  WRITE_ASCII 0x260 ~PGUILD~ (8) // General script
+
+
+	COPY ~JOsterNoMore/Cre/JOJOSVOL.CRE~			~override/JOJOSVOL.CRE~
   SAY NAME1 @100
   SAY NAME2 @100
-  WRITE_ASCII 0x248 ~JOJoster~ (8) // Override script
-  WRITE_ASCII 0x280 ~JOJoster~ (8) // Script name / Death variable
-  WRITE_ASCII 0x2CC ~JOJoster~ (8) // Dialog name
+  WRITE_ASCII 0x248 ~JOJOSVOL~ (8) // Override script
+  WRITE_ASCII 0x280 ~JOJosvol~ (8) // Script name / Death variable
+  WRITE_ASCII 0x2CC ~JOJOSVOL~ (8) // Dialog name
+  WRITE_ASCII 0x260 ~PGUILD~ (8) // General script
   
   
 ///////////// Item
@@ -94,6 +112,52 @@ END
   SAY UNIDENTIFIED_DESC @102
   SAY DESC @102 
   WRITE_ASCII 0x3a ~JOJoster~ (8) // Bam name
+
+/* 
+	COPY ~JOsterNoMore/Itm/JOJOSTSP.ITM~			~override/JOJOSTER.ITM~
+  SAY NAME1 @101
+  SAY NAME2 @101 
+  SAY UNIDENTIFIED_DESC @102
+  SAY DESC @102 
+  WRITE_ASCII 0x3a ~JOJoster~ (8) // Bam name
+ */ 
+ 
+
+///////////// Spell 
+  
+ /* 
+  	COPY ~JOsterNoMore/Spl/JOJOSTER.SPL~			~override/JOJOSTER.SPL~
+  SAY NAME1 @101
+  SAY NAME2 @101 
+  SAY UNIDENTIFIED_DESC @102
+  SAY DESC @102 
+*/
+
+// IWD Dimension Door
+
+  	COPY ~JOsterNoMore/Spl/SpDoor/JOWI402.SPL~			~override/JOWI402.SPL~
+  SAY NAME1 @10000
+  SAY NAME2 @10000 
+  SAY UNIDENTIFIED_DESC @10001
+  SAY DESC @10001 
+
+// BG1 Dimension Door
+
+//ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+
+  	COPY ~JOsterNoMore/Spl/SpDoor/JOBG402.SPL~			~override/JOBG402.SPL~
+  SAY NAME1 @10002
+  SAY NAME2 @10002 
+  SAY UNIDENTIFIED_DESC @10003
+  SAY DESC @10003
+
+// Stolen from Nostalgia pack
+
+COPY ~JOsterNoMore/Spl/DiDoor~ ~override~
+  
+//END  
+  
+  
   
   
 ///////////// Effect  
@@ -105,7 +169,21 @@ END
 ///////////// Dlg
 
 
-	COMPILE ~JOsterNoMore/Dlg/JOJOSTER.D~	~override~
+	COMPILE EVALUATE_BUFFER ~JOsterNoMore/Dlg/JOJOSTER.D~	~override~
+	
+	// COMPILE EVALUATE_BUFFER ~JOsterNoMore/Dlg/JOJOSTER.D~	~override~
+	
+
+///////////// Add General script	
+	
+	COPY_EXISTING ~SHTHLT02.CRE~			~override/SHTHLT02.CRE~
+  WRITE_ASCII 0x260 ~JOLathan~ (8) // General script
+	
+	COPY_EXISTING ~SHTHLT01.CRE~			~override/SHTHLT01.CRE~
+  WRITE_ASCII 0x260 ~JOJariel~ (8) // General script
+  
+	COPY_EXISTING ~SHTHSTOR.CRE~			~override/SHTHSTOR.CRE~
+  WRITE_ASCII 0x260 ~JORattel~ (8) // General script
 
 
 ///////////// Baf
@@ -116,8 +194,20 @@ END
 	
 	EXTEND_BOTTOM ~AR0322.BCS~				~JOsterNoMore/Baf/JOAR0322.BAF~
 	
-	COMPILE ~JOsterNoMore/Baf/JOJoster.baf~	~override~
+	COMPILE ~JOsterNoMore/Baf/JOJoster.BAF~	~override~
+	
+	COMPILE ~JOsterNoMore/Baf/JOJOSVOL.BAF~	~override~
 	
 	EXTEND_BOTTOM ~JOSTER.BCS~				~JOsterNoMore/Baf/Joster.BAF~
+	
+	EXTEND_BOTTOM ~PGUILD.BCS~				~JOsterNoMore/Baf/JOLathan.Jariel.BAF~
+	
+	COMPILE ~JOsterNoMore/Baf/JOLathan.BAF~	~override~
+	
+	COMPILE ~JOsterNoMore/Baf/JOJariel.BAF~	~override~
+	
+	COMPILE ~JOsterNoMore/Baf/JORattel.BAF~	~override~
+	
+	COMPILE ~JOsterNoMore/Baf/JOJosbis.BAF~	~override~
 	
 

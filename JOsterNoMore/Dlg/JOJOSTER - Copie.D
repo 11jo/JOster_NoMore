@@ -12,7 +12,7 @@ END
 
 IF ~~ THEN BEGIN 2
   SAY @1005
-  IF ~~ THEN REPLY @1006 EXTERN ~JOJosVol~ 1JOJosVol
+  IF ~~ THEN REPLY @1006 EXTERN JOJosVol 1JOJosVol
 END
 
 IF ~~ THEN BEGIN 2.1
@@ -22,7 +22,7 @@ END
 
 IF ~~ THEN BEGIN 2.2
   SAY @1057
-  IF ~~ THEN EXTERN ~JOJosVol~ 4JOJosVol
+  IF ~~ THEN EXTERN JOJosVol 4JOJosVol
 END
 
 IF ~~ THEN BEGIN 3
@@ -47,11 +47,6 @@ END
 
 IF ~~ THEN BEGIN 7
   SAY @1014
-  IF ~~ THEN EXTERN ~JOJosVol~ 5JOJosVol
-END
-
-IF ~~ THEN BEGIN 8
-  SAY @1060
   IF ~~ THEN DO ~GiveItemCreate("JOJoster",[PC],0,0,0) SetGlobal("JOJosterBiffIsHere","GLOBAL",2)~ EXIT
 END
 
@@ -60,7 +55,7 @@ IF ~Global("JOJosterBiffIsHere","GLOBAL",2) AreaCheck("AR0322")~ THEN BEGIN JOJo
   IF ~~ THEN EXIT
 END
 
-BEGIN ~JOJosVol~
+BEGIN JOJosVol
 
 IF ~~ THEN BEGIN 1JOJosVol
   SAY @1050
@@ -80,15 +75,5 @@ END
 IF ~~ THEN BEGIN 4JOJosVol
   SAY @1058
   IF ~~ THEN EXTERN JOJoster 3
-END
-
-IF ~~ THEN BEGIN 5JOJosVol
-  SAY @1059
-  IF ~~ THEN EXTERN JOJoster 8
-END
-
-IF ~Global("JOJosterBiffIsHere","GLOBAL",2) AreaCheck("AR0322")~ THEN BEGIN JOJosterVolIsHere
-  SAY @5000
-  IF ~~ THEN EXIT
 END
 

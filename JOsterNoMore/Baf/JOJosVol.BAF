@@ -1,0 +1,299 @@
+// Not a idiot
+
+IF
+  CombatCounter(0)
+  Global("JOJosterAttack","GLOBAL",1)
+THEN
+	RESPONSE #100
+	MoveToPointNoInterrupt([710.185])
+    FaceObject("JOJoster")
+	ClearAllActions()
+    SetGlobal("JOJosVolShowOff","GLOBAL",1)  // Relaunch routine JOJosVol
+	SetGlobal("JOJosterShowOff","GLOBAL",1) // Relaunch Routine JOJoster
+	SetGlobal("JOJosterAttack","GLOBAL",0)
+	Continue()
+END
+
+IF
+  See(NearestEnemyOf(Player1))
+THEN
+	RESPONSE #100
+	SetGlobal("JOJosVolShowOff","GLOBAL",2) // Pause Routine JOJosVol
+	SetGlobal("JOJosterShowOff","GLOBAL",2) // Pause Routine JOJoster
+	ApplySpell("JOJoster",INVOKE_COURAGE)
+	ApplySpell("JOJosvol",CLERIC_REMOVE_FEAR)
+	DisplayStringHead(Myself,@6304)
+	Attack(NearestEnemyOf(Player1))
+	SetGlobal("JOJosterAttack","GLOBAL",1)
+	Continue()
+END
+
+IF
+  AttackedBy([GOODCUTOFF],DEFAULT)
+  Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+	ApplySpell("JOJoster",INVOKE_COURAGE)
+	ApplySpell("JOJosvol",CLERIC_REMOVE_FEAR)
+	DisplayStringHead(Myself,@6302)
+	EscapeArea()
+END
+
+// Dead Biff
+
+IF
+  Dead("JOJoster")
+THEN
+  RESPONSE #100
+  DisplayStringHead(Myself,@6300)
+  EscapeArea()
+END
+
+/*
+
+Not for now
+
+// Thief in Jail
+
+IF
+  Global("JOJosJail","GLOBAL",1)
+THEN
+  RESPONSE #100
+	DisplayStringHead(Myself,@4016)
+	SetGlobal("JOJosJail","GLOBAL",2)
+	ClearAllActions()
+	Continue()
+END
+*/
+
+// Ama is dead
+
+IF
+  Global("JOJosterLathan","GLOBAL",1)
+THEN
+  RESPONSE #100
+	DisplayStringHead(Myself,@6101)
+	Wait(3)
+    SetGlobal("JOJosterLathan","GLOBAL",2)
+END
+
+IF
+  Global("JOJosterLathan","GLOBAL",6)
+THEN
+  RESPONSE #100
+	DisplayStringHead(Myself,@6105)
+	Wait(3)
+    SetGlobal("JOJosterLathan","GLOBAL",7)
+    SetGlobal("JOJosVolShowOff","GLOBAL",1)  // Relaunch routine JOJosVol
+	SetGlobal("JOJosterShowOff","GLOBAL",1) // Relaunch Routine JOJoster
+	Continue()
+END
+
+// Travel
+
+IF
+  Global("JOJosVolGoBackNow","GLOBAL",1)
+THEN
+  RESPONSE #100
+	Wait(2)
+	DisplayStringHead(Myself,@3999)
+    SetGlobal("JOJosVolGoBackNow","GLOBAL",0)
+	SetGlobal("JOJosterGoBackNow","GLOBAL",2)
+    SetGlobal("JOJosterGoBykNow","GLOBAL",0)
+END
+
+IF
+  Global("JOJosVolShowOff","GLOBAL",1)
+THEN
+  RESPONSE #100
+	Wait(20)
+	SetGlobal("JOJosVolShowOff","GLOBAL",0)
+END
+
+
+// Routine
+
+IF
+  !Dead("JOJoster")
+  Global("JOJosterBiffIsHere","GLOBAL",2)
+  AreaCheck("AR0322")
+  See([PC])
+  !Global("JOJosVolShowOff","GLOBAL",2)
+  !Global("JOJosterGoBackNow","GLOBAL",1)
+  !Global("JOJosterGetPaid","GLOBAL",1)
+THEN
+  RESPONSE #20
+	Wait(3)
+	SetGlobal("JOJosVolShowOff","GLOBAL",1)
+	DisplayStringHead(Myself,@4000)
+  RESPONSE #20
+	Wait(3)
+	SetGlobal("JOJosVolShowOff","GLOBAL",1)
+	DisplayStringHead(Myself,@4001)
+  RESPONSE #20
+	Wait(3)
+	SetGlobal("JOJosVolShowOff","GLOBAL",1)
+	DisplayStringHead(Myself,@4002)
+  RESPONSE #20
+	Wait(3)
+	SetGlobal("JOJosVolShowOff","GLOBAL",1)
+	DisplayStringHead(Myself,@4003)
+  RESPONSE #20
+	Wait(3)
+	SetGlobal("JOJosVolShowOff","GLOBAL",1)
+	DisplayStringHead(Myself,@4004)	
+//  RESPONSE #20
+//	Wait(5)
+//	SetGlobal("JOJosVolShowOff","GLOBAL",1)
+//	DisplayStringHead(Myself,@4005)	
+//  RESPONSE #20
+//	Wait(5)
+//	SetGlobal("JOJosVolShowOff","GLOBAL",1)
+//	DisplayStringHead(Myself,@4006)	
+  RESPONSE #20
+	Wait(3)
+	SetGlobal("JOJosVolShowOff","GLOBAL",1)
+	DisplayStringHead(Myself,@4007)	
+  RESPONSE #20
+	Wait(3)
+	SetGlobal("JOJosVolShowOff","GLOBAL",1)
+	DisplayStringHead(Myself,@4008)	
+  RESPONSE #20
+	Wait(3)
+	SetGlobal("JOJosVolShowOff","GLOBAL",1)
+	DisplayStringHead(Myself,@4009)	
+  RESPONSE #20
+  // Routine / Jariel / Lathan
+	Wait(3)
+	SetGlobal("JOJosVolShowOff","GLOBAL",2) // Pause Routine JOJosVol
+	SetGlobal("JOJosterShowOff","GLOBAL",2) // Pause Routine JOJoster
+	ClearAllActions()
+	DisplayStringHead(Myself,@4010)	
+	Wait(3)
+	SetGlobal("JOJosterJarLath","GLOBAL",1)	
+  RESPONSE #20
+	Wait(3)
+	SetGlobal("JOJosVolShowOff","GLOBAL",2) // Pause Routine JOJosVol
+	SetGlobal("JOJosterShowOff","GLOBAL",2) // Pause Routine JOJoster
+	ClearAllActions()
+	DisplayStringHead(Myself,@4011)
+	Wait(2)
+	SetGlobal("JOJosterRenalOff","GLOBAL",2) // Renal 
+  RESPONSE #20
+	Wait(3)
+	SetGlobal("JOJosVolShowOff","GLOBAL",1)
+	DisplayStringHead(Myself,@4012)	
+  RESPONSE #20
+  // Routine / Rattell
+	Wait(3)
+	SetGlobal("JOJosVolShowOff","GLOBAL",2) // Pause Routine JOJosVol
+	SetGlobal("JOJosterShowOff","GLOBAL",2) // Pause Routine JOJoster
+	ClearAllActions()
+	DisplayStringHead(Myself,@4017)	
+	Wait(2)
+	SetGlobal("JOJosterRattell","GLOBAL",1) // Rattell 
+  RESPONSE #20
+	Wait(3)
+	SetGlobal("JOJosVolShowOff","GLOBAL",1)
+	DisplayStringHead(Myself,@4013)	
+//  RESPONSE #20
+//	Wait(5)
+//	SetGlobal("JOJosVolShowOff","GLOBAL",1)
+//	DisplayStringHead(Myself,@4014)	
+  RESPONSE #20
+	Wait(3)
+	SetGlobal("JOJosVolShowOff","GLOBAL",1)
+	DisplayStringHead(Myself,@4015)	
+END
+
+// Link
+
+IF
+  Global("JOJosterSacreOff","GLOBAL",1)
+THEN
+  RESPONSE #100
+	DisplayStringHead(Myself,@4005)	
+	Wait(2)
+	SetGlobal("JOJosterSacreOff","GLOBAL",0)
+    SetGlobal("JOJosVolShowOff","GLOBAL",1)  // Relaunch routine JOJosVol
+	SetGlobal("JOJosterShowOff","GLOBAL",1) // Relaunch Routine JOJoster
+	Continue()
+END
+
+IF
+  Global("JOJosterOffOff","GLOBAL",1)
+THEN
+  RESPONSE #100
+	DisplayStringHead(Myself,@4014)	
+	Wait(2)
+	SetGlobal("JOJosterOffOff","GLOBAL",0)
+    SetGlobal("JOJosVolShowOff","GLOBAL",1)  // Relaunch routine JOJosVol
+	SetGlobal("JOJosterShowOff","GLOBAL",1) // Relaunch Routine JOJoster
+	Continue()
+END
+
+IF
+  Global("JOJosterWendyOff","GLOBAL",1)
+THEN
+  RESPONSE #100
+	DisplayStringHead(Myself,@4006)	
+	Wait(2)
+	SetGlobal("JOJosterWendyOff","GLOBAL",2)
+END
+
+
+// Routine / Jariel / Lathan
+
+IF
+  Global("JOJosterJarLath","GLOBAL",5)
+THEN
+  RESPONSE #100
+	DisplayStringHead(Myself,@6003)	
+	SetGlobal("JOJosterJarLath","GLOBAL",10)
+	Wait(3)
+	SetGlobal("JOJosterJarLath","GLOBAL",6)
+END
+
+IF
+  Global("JOJosterJarLath","GLOBAL",7)
+THEN
+  RESPONSE #100
+	DisplayStringHead(Myself,@6005)	
+	SetGlobal("JOJosterJarLath","GLOBAL",0)
+    SetGlobal("JOJosVolShowOff","GLOBAL",1)  // Relaunch routine JOJosVol
+	SetGlobal("JOJosterShowOff","GLOBAL",1) // Relaunch Routine JOJoster
+	Continue()
+END
+
+
+  // Routine / Rattell
+
+IF
+  Global("JOJosterRattell","GLOBAL",2)
+THEN
+  RESPONSE #100
+	DisplayStringHead(Myself,@4018)	
+	Wait(2)
+	SetGlobal("JOJosterRattell","GLOBAL",3)
+END
+
+
+// One Biff
+
+IF
+  Global("JOJosOneBiff","GLOBAL",1)
+THEN
+  RESPONSE #100
+	DisplayStringHead(Myself,@6203)	
+	Wait(2)
+	SetGlobal("JOJosOneBiff","GLOBAL",2)
+END
+
+IF
+  Global("JOJosOneBiff","GLOBAL",8)
+THEN
+  RESPONSE #100
+	DisplayStringHead(Myself,@6204)	
+	Wait(2)
+	SetGlobal("JOJosOneBiff","GLOBAL",9)
+END
