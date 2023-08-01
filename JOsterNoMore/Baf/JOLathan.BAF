@@ -1,12 +1,12 @@
 // Ama is dead
 
 IF
-  Global("JOJosterLathan","GLOBAL",2)
+	Global("JOJosterLathan","GLOBAL",2)
 THEN
-  RESPONSE #100
-	DisplayStringHead(Myself,@6102)
-	Wait(3)
-    SetGlobal("JOJosterLathan","GLOBAL",3)
+	RESPONSE #100
+		SetGlobal("JOJosterLathan","GLOBAL",3)
+		Wait(3)
+		DisplayStringHead(Myself,@6102)
 END
 
 	// Routine / Jariel / Lathan
@@ -14,40 +14,40 @@ END
 // Lathan
 	
 IF
-  Global("JOJosterJarLath","GLOBAL",3)
+	Global("JOJosterJarLath","GLOBAL",3)
 THEN
-  RESPONSE #100
-	DisplayStringHead(Myself,@6001)
-	Wait(3)
-	SetGlobal("JOJosterJarLath","GLOBAL",4)
+	RESPONSE #100
+		SetGlobal("JOJosterJarLath","GLOBAL",4)
+		DisplayStringHead(Myself,@6001)
+		Continue()
 END
 	
 IF
-  Global("JOJosterJarLath","GLOBAL",4)
+	Global("JOJosterJarLath","GLOBAL",4)
 THEN
-  RESPONSE #100
-	DisplayStringHead(Myself,@6002)
-	Wait(3)
-	SetGlobal("JOJosterJarLath","GLOBAL",5)
+	RESPONSE #100
+		SetGlobal("JOJosterJarLath","GLOBAL",5)
+		Wait(2)
+		DisplayStringHead(Myself,@6002)
 END
 
 
 // One Biff
 
 IF
-  Global("JOJosOneBiff","GLOBAL",2)
+	Global("JOJosOneBiff","GLOBAL",2)
 THEN
-  RESPONSE #100
-	DisplayStringHead(Myself,@6202)	
-	Wait(2)
-	SetGlobal("JOJosOneBiff","GLOBAL",3)
+	RESPONSE #100
+		SetGlobal("JOJosOneBiff","GLOBAL",3)
+		Wait(2)
+		DisplayStringHead(Myself,@6202)	
 END
 
 IF
-  Global("JOJosOneBiff","GLOBAL",7)
+	Global("JOJosOneBiff","GLOBAL",7)
 THEN
-  RESPONSE #100
-	DisplayStringHead(Myself,@6207)	
-	Wait(2)
-	SetGlobal("JOJosOneBiff","GLOBAL",8)
+	RESPONSE #100
+		SetGlobal("JOJosOneBiff","GLOBAL",8)
+		Wait(2)
+		DisplayStringHead(Myself,@6207)	
 END

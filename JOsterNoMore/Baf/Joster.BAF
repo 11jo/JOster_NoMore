@@ -4,9 +4,8 @@ IF
 	See(Player1)
 THEN
 	RESPONSE #100
-        Wait(2)	
 		SetGlobal("CDJoster","AR0522",0)
-        Wait(4)	
+		Wait(4)	
 		StartDialogueNoSet(Player1)
 		SetGlobal("JOJosterGoBackNow","GLOBAL",1)
 END

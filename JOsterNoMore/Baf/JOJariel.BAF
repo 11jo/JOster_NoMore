@@ -1,12 +1,12 @@
 // Ama is dead
 
 IF
-  Global("JOJosterLathan","GLOBAL",4)
+	Global("JOJosterLathan","GLOBAL",4)
 THEN
-  RESPONSE #100
-	Wait(3)
-	DisplayStringHead(Myself,@6104)  // Incroyable.
-    SetGlobal("JOJosterLathan","GLOBAL",5)
+	RESPONSE #100
+		SetGlobal("JOJosterLathan","GLOBAL",5)
+		Wait(3)
+		DisplayStringHead(Myself,@6104)  // Incroyable.
 END
 
 		// Routine / Jariel / Lathan
@@ -14,41 +14,42 @@ END
 // Jariel
 
 IF
-  Global("JOJosterJarLath","GLOBAL",2)
+	Global("JOJosterJarLath","GLOBAL",2)
 THEN
-  RESPONSE #100
-	DisplayStringHead(Myself,@6000)  // Ces deux là sont impossible.
-	Wait(4)
-	SetGlobal("JOJosterJarLath","GLOBAL",3)
+	RESPONSE #100
+		SetGlobal("JOJosterJarLath","GLOBAL",3)
+		Wait(2)
+		DisplayStringHead(Myself,@6000)  // Ces deux là sont impossible.
+		Continue()
 END
 	
 IF
-  Global("JOJosterJarLath","GLOBAL",6)
+	Global("JOJosterJarLath","GLOBAL",6)
 THEN
-  RESPONSE #100
-	DisplayStringHead(Myself,@6004)  // Oui, oui ! T'as du chemin à faire avant de changer le patriarcat... Ma jolie...
-	Wait(5)
-	SetGlobal("JOJosterJarLath","GLOBAL",7)
+	RESPONSE #100
+		SetGlobal("JOJosterJarLath","GLOBAL",7)
+		Wait(3)
+		DisplayStringHead(Myself,@6004)  // Oui, oui ! T'as du chemin à faire avant de changer le patriarcat... Ma jolie...
 END
 
 
 // One Biff
 
 IF
-  Global("JOJosOneBiff","GLOBAL",3)
+	Global("JOJosOneBiff","GLOBAL",3)
 THEN
-  RESPONSE #100
-	DisplayStringHead(Myself,@6200)	  // Vraiment ?
-	Wait(2)
-	SetGlobal("JOJosOneBiff","GLOBAL",4)
+	RESPONSE #100
+		SetGlobal("JOJosOneBiff","GLOBAL",4)
+		Wait(2)
+		DisplayStringHead(Myself,@6200)	  // Vraiment ?
 END
 
 IF
-  Global("JOJosOneBiff","GLOBAL",10)
+	Global("JOJosOneBiff","GLOBAL",10)
 THEN
-  RESPONSE #100
-	DisplayStringHead(Myself,@6205)	 // Tu n'a que ça à faire ?
-	Wait(2)
-	SetGlobal("JOJosOneBiff","GLOBAL",5)
+	RESPONSE #100
+		SetGlobal("JOJosOneBiff","GLOBAL",5)
+		Wait(2)
+		DisplayStringHead(Myself,@6205)	 // Tu n'a que ça à faire ?
 END
 

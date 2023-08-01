@@ -87,6 +87,7 @@
 @3020 = ~Non ! NON ! Non mais ça va pas la tête ?~
 @3021 = ~Patron ! le sortilège qui me lie à l'obole ne doit surtout pas être utilisé en ma présence... J'aurais pu y laisser ma peau !~ ~Patronne ! le sortilège qui me lie à l'obole ne doit surtout pas être utilisé en ma présence... J'aurais pu y laisser ma peau !~
 @3022 = ~Il y a bien assez de Biff dans les parages.~
+@3023 = ~Ouf... C'est sûr qu'un seul nous cause déjà bien des soucis.~ // Voleuse
 
 
 // Voleuse de la Guilde de <CHARNAME>
@@ -152,7 +153,7 @@
 @6202 = ~<CHARNAME> !~ // Lathan
 @6203 = ~Biff ! Nooon...~ // Voleuse
 @6204 = ~Je vois que tu y prends du plaisir... Sadique !~ // Voleuse
-@6205 = ~Tu n'a que ça à faire ?~ // Jariel
+@6205 = ~Tu n'as que ça à faire ?~ // Jariel
 @6206 = ~Il ont l'air de bien s'amuser dans l'arrière boutique...~ // Rattell
 @6207 = ~Et c'est reparti pour un tour !~ // Lathan
 
@@ -162,8 +163,17 @@
 @6301 = ~Je n'arrive pas à y croire... Je n'ai plus rien à faire ici !~ // Biff
 @6302 = ~Faut pas croire que je vais me laisser assasiner comme ça !~ // Voleuse
 @6303 = ~<CHARNAME> ! Tu n'en vaux pas la peine...~ // Biff
+
+
 @6304 = ~Tu vas voir le sort que je réserve à ceux qui s'en prennent à <CHARNAME> !~ // Voleuse
 @6305 = ~À l'attaque ! Pour le Patron !~ ~À l'attaque ! Pour la Patronne !~ // Biff
+
+@6306 = ~(Vous subissez une décharge magique.)~ // Biff
+@6307 = ~Biff n'est plus de ce monde !~ // Biff
+
+
+
+@6307 = ~Biff attends ! Adieu <CHARNAME> on ne peut pas te faire confiance.~ // Voleuse
 
 
 

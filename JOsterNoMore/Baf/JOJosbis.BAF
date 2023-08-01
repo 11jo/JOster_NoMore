@@ -1,90 +1,94 @@
 // Dead Biff
 
 IF
-  Dead("JOJoster")
+	Dead("JOJoster")
 THEN
-  RESPONSE #100
-  DestroySelf()
-  ActionOverride(Player1,ApplySpell(Myself,SAREVOK_STRIKE))
+	RESPONSE #100
+		DisplayStringHead(Myself,@6307)
+		ApplySpell(Myself,SAREVOK_STRIKE)
+		Wait(1)
+		DestroySelf()
+		ActionOverride(Player1,ApplySpell(Myself,SAREVOK_STRIKE))
+		DisplayStringHead(Player1,@6306)
 END
 
 // One Biff
 
 IF
-  Global("JOJosOneBiff","GLOBAL",0)
-  AreaCheck("AR0322")  // (Q)  Guilde de Charname, L1
-  InMyArea("JOJoster")  // Biff, le voleur de l'ombre
-  !Dead("JOJoster")
+	Global("JOJosOneBiff","GLOBAL",0)
+	AreaCheck("AR0322")  // (Q)  Guilde de Charname, L1
+	InMyArea("JOJoster")  // Biff, le voleur de l'ombre
+	!Dead("JOJoster")
 THEN
-  RESPONSE #100
-	ClearAllActions()
-	SetGlobal("JOJosVolShowOff","GLOBAL",2) // Pause Routine JOJosVol
-	SetGlobal("JOJosterShowOff","GLOBAL",2) // Pause Routine JOJoster
-	ScreenShake([5.5],5)
-	ActionOverride("JOJoster",DisplayStringHead(Myself,@3020))  // Non ! NON ! Non mais ça va pas la tête ?
-	DisplayStringHead(Myself,@3020)  // Non ! NON ! Non mais ça va pas la tête ?
-	Wait(2)	
-	ApplySpell(Myself,VIEKANG_LIGHTNING)
-	ActionOverride("JOJoster",ApplySpell(Myself,VIEKANG_LIGHTNING))
-	ScreenShake([5.5],5)
-	SetGlobal("JOJosOneBiff","GLOBAL",1)
-	Continue()
+	RESPONSE #100
+		SetGlobal("JOJosVolShowOff","GLOBAL",2) // Pause Routine JOJosVol
+		SetGlobal("JOJosterShowOff","GLOBAL",2) // Pause Routine JOJoster
+		ClearAllActions()
+		ScreenShake([5.5],5)
+		ActionOverride("JOJoster",DisplayStringHead(Myself,@3020))  // Non ! NON ! Non mais ça va pas la tête ?
+		DisplayStringHead(Myself,@3020)  // Non ! NON ! Non mais ça va pas la tête ?
+		Wait(2)	
+		ApplySpell(Myself,VIEKANG_LIGHTNING)
+		ActionOverride("JOJoster",ApplySpell(Myself,VIEKANG_LIGHTNING))
+		ScreenShake([5.5],5)
+		SetGlobal("JOJosOneBiff","GLOBAL",1)
+		Continue()
 END
 
 // One Biff again
 
 IF
-  GlobalGT("JOJosOneBiff","GLOBAL",0)
-  AreaCheck("AR0322")  // (Q)  Guilde de Charname, L1
-  InMyArea("JOJoster")  // Biff, le voleur de l'ombre
-  !Dead("JOJoster")
+	GlobalGT("JOJosOneBiff","GLOBAL",0)
+	AreaCheck("AR0322")  // (Q)  Guilde de Charname, L1
+	InMyArea("JOJoster")  // Biff, le voleur de l'ombre
+	!Dead("JOJoster")
 THEN
-  RESPONSE #100
-	ClearAllActions()
-	SetGlobal("JOJosVolShowOff","GLOBAL",2) // Pause Routine JOJosVol
-	SetGlobal("JOJosterShowOff","GLOBAL",2) // Pause Routine JOJoster
-	ScreenShake([5.5],5)
-	ActionOverride("JOJoster",DisplayStringHead(Myself,@3020))  // Non ! NON ! Non mais ça va pas la tête ?
-	DisplayStringHead(Myself,@3020)  // Non ! NON ! Non mais ça va pas la tête ?
-	Wait(2)	
-	ApplySpell(Myself,VIEKANG_LIGHTNING)
-	ActionOverride("JOJoster",ApplySpell(Myself,VIEKANG_LIGHTNING))
-	ScreenShake([5.5],5)
-	SetGlobal("JOJosOneBiff","GLOBAL",7)
-	Continue()
+	RESPONSE #100
+		SetGlobal("JOJosVolShowOff","GLOBAL",2) // Pause Routine JOJosVol
+		SetGlobal("JOJosterShowOff","GLOBAL",2) // Pause Routine JOJoster
+		ClearAllActions()
+		ScreenShake([5.5],5)
+		ActionOverride("JOJoster",DisplayStringHead(Myself,@3020))  // Non ! NON ! Non mais ça va pas la tête ?
+		DisplayStringHead(Myself,@3020)  // Non ! NON ! Non mais ça va pas la tête ?
+		Wait(2)	
+		ApplySpell(Myself,VIEKANG_LIGHTNING)
+		ActionOverride("JOJoster",ApplySpell(Myself,VIEKANG_LIGHTNING))
+		ScreenShake([5.5],5)
+		SetGlobal("JOJosOneBiff","GLOBAL",7)
+		Continue()
 END
 
 // Travel
 
 IF
-  !AreaCheck("AR0322")
-  See([PC])
-  !Global("JosterLeave","GLOBAL",0)
+	!AreaCheck("AR0322")
+	See([PC])
+	!Global("JosterLeave","GLOBAL",0)
 THEN
-  RESPONSE #100
-	ClearAllActions()
-	Wait(1)	
-	DisplayStringHead(Myself,@3002)  // Avant l'heure, c'est pas l'heure...
-    FaceObject(Player1(Myself))
-	ReallyForceSpell(Myself,DRYAD_TELEPORT)
-	Wait(1)	
-	DisplayStringHead(Myself,@3001)  // À bientôt patron !
+	RESPONSE #100
+		ClearAllActions()
+		Wait(1)	
+		DisplayStringHead(Myself,@3002)  // Avant l'heure, c'est pas l'heure...
+		FaceObject(Player1(Myself))
+		ReallyForceSpell(Myself,DRYAD_TELEPORT)
+		Wait(1)	
+		DisplayStringHead(Myself,@3001)  // À bientôt patron !
 END
 
 IF
-  !AreaCheck("AR0322")
-  See([PC])
-  Global("JOJosterGetPaid","GLOBAL",0)
-  Global("JosterLeave","GLOBAL",0)
+	!AreaCheck("AR0322")
+	See([PC])
+	Global("JOJosterGetPaid","GLOBAL",0)
+	Global("JosterLeave","GLOBAL",0)
 THEN
-  RESPONSE #100
-	ClearAllActions()
-	DisplayStringHead(Myself,@3003)  // Me voila 
-    FaceObject(Player1(Myself))
-	Wait(2)
-	DisplayStringHead(Myself,@3000)  // En avant <CHARNAME>... Heu, Chef !
-	Wait(3)
-	SetGlobal("JOJosterGetPaid","GLOBAL",1)
-	ReallyForceSpell(Myself,DRYAD_TELEPORT)
-	ReallyForceSpell(Player1,DRYAD_TELEPORT)
+	RESPONSE #100
+		ClearAllActions()
+		DisplayStringHead(Myself,@3003)  // Me voila 
+		FaceObject(Player1(Myself))
+		Wait(2)
+		DisplayStringHead(Myself,@3000)  // En avant <CHARNAME>... Heu, Chef !
+		Wait(3)
+		SetGlobal("JOJosterGetPaid","GLOBAL",1)
+		ReallyForceSpell(Myself,DRYAD_TELEPORT)
+		ReallyForceSpell(Player1,DRYAD_TELEPORT)
 END

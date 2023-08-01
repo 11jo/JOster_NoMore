@@ -1,197 +1,178 @@
+
+
+// One Biff
+
 IF
-  Global("JOJosterBiffIsHere","GLOBAL",0)
+	Global("JOJosOneBiff","GLOBAL",5)
+	AreaCheck("AR0322")
+	Global("JOJosterBiffIsHere","GLOBAL",2)
+	!InMyArea("JOJoster")
 THEN
-  RESPONSE #100
-	Wait(2)
-	ClearAllActions()
-	CreateCreature("JOJoster",[1076.474],15)
-	CreateCreature("JOJosVol",[475.329],30)
-	ActionOverride("JOJoster",MoveToPointNoInterrupt([833.220]))
-	ActionOverride("JOJosVol",MoveToPointNoInterrupt([710.185]))
-    ActionOverride("JOJosVol",FaceObject("JOJoster"))
-    ActionOverride("JOJoster",FaceObject("JOJosVol"))
-	ClearAllActions()
-	SetGlobal("JOJosterVolIsHere","GLOBAL",1)
-	SetGlobal("JOJosterBiffIsHere","GLOBAL",1)
-	SetGlobal("JOJOSONE","GLOBAL",2)
-	Continue()
+	RESPONSE #100
+		ScreenShake([5.5],5)
+		Wait(3)
+		ClearAllActions()
+		Wait(1)
+		ScreenShake([5.5],5)
+		CreateCreature("JOJoster",[833.220],15)	
+		ActionOverride("JOJoster",DisplayStringHead(Myself,@3021))
+		ActionOverride("JOJoster",FaceObject(Player1(Myself))
+		ActionOverride("JOJoster",ApplySpell(Myself,RESTORE_FULL_HEALTH))
+		ActionOverride("JOJoster",ApplySpell(Myself,CLERIC_DRAW_UPON_HOLY_MIGHT))
+		ActionOverride("JOJoster",ApplySpell(Myself,CLERIC_PROTECT_FROM_EVIL))
+		ActionOverride("JOJoster",ApplySpell(Myself,WIZARD_TENSERS_TRANSFORMATION))
+		Wait(6)	
+		ActionOverride("JOJoster",DisplayStringHead(Myself,@3022))
+		SetGlobal("JOJosOneBiff","GLOBAL",6)
+		Wait(2)	
+		ActionOverride("JOJosvol",DisplayStringHead(Myself,@3023))
+		SetGlobal("JOJosVolShowOff","GLOBAL",1)  // Relaunch routine JOJosVol
+		SetGlobal("JOJosterShowOff","GLOBAL",1) // Relaunch Routine JOJoster
+		Continue()
+END
+
+// Relaunch
+
+IF
+	InMyArea("JOJoster")
+	InMyArea(Player1)
+	GlobalGT("JOJosterShowOff","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("JOJosterShowOff","AR0322",ONE_MINUTE)
 END
 
 IF
-  Global("JOJosOneBiff","GLOBAL",5)
-  AreaCheck("AR0322")
-  Global("JOJosterBiffIsHere","GLOBAL",2)
-  !InMyArea("JOJoster")
+	GlobalTimerExpired("JOJosterShowOff","GLOBAL")
 THEN
-  RESPONSE #100
-	Wait(3)
-	ClearAllActions()
-	ScreenShake([5.5],5)
-	Wait(1)
-	ScreenShake([5.5],5)
-	CreateCreature("JOJoster",[833.220],15)	
-	ActionOverride("JOJoster",DisplayStringHead(Myself,@3021))
-	ActionOverride("JOJoster",FaceObject(Player1(Myself))
-	ActionOverride("JOJoster",ApplySpell(Myself,RESTORE_FULL_HEALTH))
-	ActionOverride("JOJoster",ApplySpell(Myself,CLERIC_DRAW_UPON_HOLY_MIGHT))
-	ActionOverride("JOJoster",ApplySpell(Myself,CLERIC_PROTECT_FROM_EVIL))
-	ActionOverride("JOJoster",ApplySpell(Myself,WIZARD_TENSERS_TRANSFORMATION))
-	Wait(6)	
-	ActionOverride("JOJoster",DisplayStringHead(Myself,@3022))
-	SetGlobal("JOJosOneBiff","GLOBAL",6)
-    SetGlobal("JOJosVolShowOff","GLOBAL",1)  // Relaunch routine JOJosVol
-	SetGlobal("JOJosterShowOff","GLOBAL",1) // Relaunch Routine JOJoster
-	Continue()
+	RESPONSE #100
+		SetGlobal("JOJosterShowOff","GLOBAL",1)
 END
+
+// Start
+
+IF
+	Global("JOJosterBiffIsHere","GLOBAL",0)
+THEN
+	RESPONSE #100
+		// CreateCreature("JOJoster",[1076.474],15)
+		CreateCreature("JOJosVol",[475.329],30)
+		//ActionOverride("JOJoster",MoveToPointNoInterrupt([833.220]))
+		ActionOverride("JOJosVol",MoveToPointNoInterrupt([710.185]))
+		ActionOverride("JOJosVol",FaceObject(Player1))
+		Wait(4)
+		CreateCreatureDoor("JOJoster",[833.220],S)
+		ActionOverride("JOJoster",FaceObject(Player1))
+		SetGlobal("JOJosterVolIsHere","GLOBAL",1)
+		SetGlobal("JOJosterBiffIsHere","GLOBAL",1)
+		Continue()
+END
+
+
+// Ama Revenge
+
 /*
-// Routine JOJOSTER
-
 IF
-  Global("JOJosterShowOff","GLOBAL",1)
+  Dead("shthass1")
+  Global("JOJosAmaRevenge","GLOBAL",0)
 THEN
   RESPONSE #100
-	Wait(20)
-	SetGlobal("JOJosterShowOff","GLOBAL",0)
+	SetGlobalTimer("JOJosAmaRevenge","AR0322",THREE_DAYS)
+	SetGlobal("JOJosAmaRevenge","GLOBAL",1)
 END
 
 IF
-  !Global("JOJosterGoBackNow","GLOBAL",1)
-  !Global("JOJosterGetPaid","GLOBAL",1)
-  Global("JOJosterBiffIsHere","GLOBAL",2)
-  Global("JOJosterShowOff","GLOBAL",0)
-  Global("JOJosterJarLath","GLOBAL",0)		
-  Global("JOJosterRattell","GLOBAL",0)	
+  GlobalTimerExpired("JOJosAmaRevenge","GLOBAL")
+  InMyArea("JOJoster")
+  InMyArea(Player1) 
+  Global("JOJosterGetPaid","GLOBAL",0)
 THEN
-  RESPONSE #20
-	SetGlobal("JOJosterShowOff","GLOBAL",1)
-	DisplayStringHead("JOJoster",@3004)
-  RESPONSE #20
-	SetGlobal("JOJosterShowOff","GLOBAL",1)
-  RESPONSE #20
-	SetGlobal("JOJosterShowOff","GLOBAL",1)
-	DisplayStringHead("JOJoster",@3006)
-  RESPONSE #20
-	SetGlobal("JOJosterShowOff","GLOBAL",1)
-	DisplayStringHead("JOJoster",@3007)
-  RESPONSE #20
-	SetGlobal("JOJosterShowOff","GLOBAL",1)
-	DisplayStringHead("JOJoster",@3008)	
-	Wait(4)
-	DisplayStringHead("JOJosVol",@4005)
-  RESPONSE #20
-	SetGlobal("JOJosterShowOff","GLOBAL",1)
-	DisplayStringHead("JOJoster",@3009)	
-	Wait(4)
-	DisplayStringHead("JOJosVol",@4006)
-//  RESPONSE #20
-//	SetGlobal("JOJosterShowOff","GLOBAL",1)
-//	DisplayStringHead(Myself,@3010)	
-  RESPONSE #20
-	SetGlobal("JOJosterShowOff","GLOBAL",1)
-	DisplayStringHead("JOJoster",@3011)
-//  RESPONSE #20
-//	SetGlobal("JOJosterShowOff","GLOBAL",1)
-//	DisplayStringHead(Myself,@3013)	
-  RESPONSE #20
-	SetGlobal("JOJosterShowOff","GLOBAL",1)
-	DisplayStringHead("JOJoster",@3014)	
-  RESPONSE #20
-	SetGlobal("JOJosterShowOff","GLOBAL",1)
-	DisplayStringHead("JOJoster",@3015)	
-  RESPONSE #20
-	SetGlobal("JOJosterShowOff","GLOBAL",1)
-	DisplayStringHead("JOJoster",@3016)	
-	Wait(4)
-	DisplayStringHead("JOJosVol",@4014)
+  RESPONSE #100
+	ClearAllActions()
+	StartCutSceneMode()
+	HideGUI()
+	ActionOverride(Player1,MoveToPointNoInterrupt([833.220]))
+	ActionOverride(Player2,MoveToPointNoInterrupt([833.220]))
+	ActionOverride(Player3,MoveToPointNoInterrupt([833.220]))
+	ActionOverride(Player4,MoveToPointNoInterrupt([833.220]))
+	ActionOverride(Player5,MoveToPointNoInterrupt([833.220]))
+	ActionOverride(Player6,MoveToPointNoInterrupt([833.220]))
+	CreateCreature("JOJosAMA",[1076.474],15)
+	CreateCreature("JOJosAMB",[1076.474],15)
+	CreateCreature("JOJosAM1",[1076.474],15)
+	CreateCreature("JOJosAM2",[1076.474],15)
+	CreateCreature("JOJosAM1",[1076.474],15)
+	CreateCreature("JOJosAM2",[1076.474],15)
+	CreateCreature("JOJosAM1",[1076.474],15)
+	CreateCreature("JOJosAM2",[1076.474],15)
+	ActionOverride("JOJosAMA",MoveToPointNoInterrupt([833.220]))
+	ActionOverride("JOJosAMB",MoveToPointNoInterrupt([833.220]))
+	ActionOverride("JOJosAM1",MoveToPointNoInterrupt([833.220]))
+	ActionOverride("JOJosAM1",MoveToPointNoInterrupt([710.185]))
+	ActionOverride("JOJosAM1",MoveToPointNoInterrupt([833.220]))
+	ActionOverride("JOJosAM1",MoveToPointNoInterrupt([710.185]))
+	ActionOverride("JOJosAM1",MoveToPointNoInterrupt([833.220]))
+	ActionOverride("JOJosAM1",MoveToPointNoInterrupt([710.185]))
+    ActionOverride("JOJosAM1",FaceObject(Player1))
+    ActionOverride("JOJosAM1",FaceObject(Player1))
+    ActionOverride("JOJosAM1",FaceObject(Player1))
+    ActionOverride("JOJosAM1",FaceObject(Player1))
+    ActionOverride("JOJosAM1",FaceObject(Player1))
+    ActionOverride("JOJosAM1",FaceObject(Player1))
+	//EndCutSceneMode()
+	StartDialogue("JOJosAM1",[PC])
+	//ActionOverride("JOJosAM1",StartDialogue("JOJosAM1",[PC]))
+	Continue()
 END
 
-// Routine JOJOSVOL
+// DIALOGUE THEN GLOBAL SetGlobal("JOJosAmaRevenge","GLOBAL",2)
 
 IF
-  !Global("JOJosterGoBackNow","GLOBAL",1)
-  !Global("JOJosterGetPaid","GLOBAL",1)
-  Global("JOJosterBiffIsHere","GLOBAL",2)
-  Global("JOJosVolShowOff","GLOBAL",0)
-  Global("JOJosterJarLath","GLOBAL",0)	
-  Global("JOJosterRattell","GLOBAL",0)	
+  Global("JOJosAmaRevenge","GLOBAL",2)
 THEN
-  RESPONSE #20
-	Wait(5)
-	SetGlobal("JOJosVolShowOff","GLOBAL",1)
-	DisplayStringHead("JOJosVol",@4000)
-  RESPONSE #20
-	Wait(5)
-	SetGlobal("JOJosVolShowOff","GLOBAL",1)
-	DisplayStringHead("JOJosVol",@4001)
-  RESPONSE #20
-	Wait(5)
-	SetGlobal("JOJosVolShowOff","GLOBAL",1)
-	DisplayStringHead("JOJosVol",@4002)
-  RESPONSE #20
-	Wait(5)
-	SetGlobal("JOJosVolShowOff","GLOBAL",1)
-	DisplayStringHead("JOJosVol",@4003)
-  RESPONSE #20
-	Wait(5)
-	SetGlobal("JOJosVolShowOff","GLOBAL",1)
-	DisplayStringHead("JOJosVol",@4004)	
-//  RESPONSE #20
-//	Wait(5)
-//	SetGlobal("JOJosVolShowOff","GLOBAL",1)
-//	DisplayStringHead(Myself,@4005)	
-//  RESPONSE #20
-//	Wait(5)
-//	SetGlobal("JOJosVolShowOff","GLOBAL",1)
-//	DisplayStringHead(Myself,@4006)	
-  RESPONSE #20
-	Wait(5)
-	SetGlobal("JOJosVolShowOff","GLOBAL",1)
-	DisplayStringHead("JOJosVol",@4007)	
-  RESPONSE #20
-	Wait(5)
-	SetGlobal("JOJosVolShowOff","GLOBAL",1)
-	DisplayStringHead("JOJosVol",@4008)	
-  RESPONSE #20
-	Wait(5)
-	SetGlobal("JOJosVolShowOff","GLOBAL",1)
-	DisplayStringHead("JOJosVol",@4009)	
-  RESPONSE #20
-  // Routine / Jariel / Lathan
-	Wait(5)
-	SetGlobal("JOJosVolShowOff","GLOBAL",1)
-	DisplayStringHead("JOJosVol",@4010)	
-	Wait(3)
-	SetGlobal("JOJosterJarLath","GLOBAL",1)	
-	// Routine / Jariel / Lathan
-  RESPONSE #20
-	Wait(5)
-	SetGlobal("JOJosVolShowOff","GLOBAL",1)
-	DisplayStringHead("JOJosVol",@4011)	
-	Wait(4)
-	DisplayStringHead("JOJoster",@3013)
-  RESPONSE #20
-	Wait(5)
-	SetGlobal("JOJosVolShowOff","GLOBAL",1)
-	DisplayStringHead("JOJosVol",@4012)	
-  RESPONSE #20
-  // Routine / Rattell
-	Wait(5)
-	SetGlobal("JOJosVolShowOff","GLOBAL",1)
-	DisplayStringHead("JOJosVol",@4017)	
-	Wait(2)
-	SetGlobal("JOJosterRattell","GLOBAL",1)		
-  // Routine / Rattell
-  RESPONSE #20
-	Wait(5)
-	SetGlobal("JOJosVolShowOff","GLOBAL",1)
-	DisplayStringHead("JOJosVol",@4013)	
-//  RESPONSE #20
-//	Wait(5)
-//	SetGlobal("JOJosVolShowOff","GLOBAL",1)
-//	DisplayStringHead(Myself,@4014)	
-  RESPONSE #20
-	Wait(5)
-	SetGlobal("JOJosVolShowOff","GLOBAL",1)
-	DisplayStringHead("JOJosVol",@4015)	
+  RESPONSE #100
+	CreateCreature("JOJosGu1",[1076.474],15)
+	CreateCreature("JOJosGu2",[1076.474],15)
+	CreateCreature("JOJosGu3",[1076.474],15)
+	CreateCreature("JOJosGu2",[1076.474],15)
+	CreateCreature("JOJosGu1",[1076.474],15)
+	CreateCreature("JOJosGu3",[1076.474],15)
+	ActionOverride("JOJosGu1",MoveToPointNoInterrupt([833.220]))
+	ActionOverride("JOJosGu2",MoveToPointNoInterrupt([710.185]))
+	ActionOverride("JOJosGu3",MoveToPointNoInterrupt([833.220]))
+	ActionOverride("JOJosGu2",MoveToPointNoInterrupt([710.185]))
+	ActionOverride("JOJosGu1",MoveToPointNoInterrupt([833.220]))
+	ActionOverride("JOJosGu3",MoveToPointNoInterrupt([710.185]))
+	ActionOverride("JOJoster",ApplySpell("shthlt02",WIZARD_OTILUKES_RESILIENT_SPHERE))
+	ActionOverride("JOJoster",ApplySpell("shthlt01",WIZARD_OTILUKES_RESILIENT_SPHERE))
+	ActionOverride("JOJosvol",ApplySpell("shthstor",WIZARD_OTILUKES_RESILIENT_SPHERE))
+	ActionOverride("JOJosvol",ApplySpell("Varia",WIZARD_OTILUKES_RESILIENT_SPHERE))
+	ActionOverride("JOJoster",ApplySpell("Joster",WIZARD_OTILUKES_RESILIENT_SPHERE))
+	ActionOverride("JOJoster",ApplySpell("Morsa",WIZARD_OTILUKES_RESILIENT_SPHERE))
+	ActionOverride("JOJosvol",ApplySpell("Kretor",WIZARD_OTILUKES_RESILIENT_SPHERE))
+	ActionOverride("JOJoster",ApplySpell("Milph",WIZARD_OTILUKES_RESILIENT_SPHERE))
+	ActionOverride("JOJosvol",ApplySpell("Hanz",WIZARD_OTILUKES_RESILIENT_SPHERE))
+	ActionOverride("JOJoster",StartDialogue("JOJoster",[PC]))
+	//EndCutSceneMode()
+	Continue()
+END
+
+
+ // IN DIALOGUE
+
+
+IF ~~ THEN BEGIN a2
+  SAY @9
+  IF ~~ THEN  DO ~ChangeEnemyAlly(Myself,ALLY)
+  ChangeEnemyAlly("JOJosAMA",ENEMY)
+  ChangeEnemyAlly("JOJosAMB",ENEMY)
+  ChangeEnemyAlly("JOJosAM1",ENEMY)
+  ChangeEnemyAlly("JOJosAM2",ENEMY)
+  ChangeEnemyAlly("JOJosAM3",ENEMY)
+  ChangeEnemyAlly("JOJosAM1",ENEMY)
+  ChangeEnemyAlly("JOJosAM2",ENEMY)
+  ChangeEnemyAlly("JOJosAM1",ENEMY)
+  ChangeEnemyAlly("JOJosAM2",ENEMY)
+  ChangeEnemyAlly("JOJosAM3",ENEMY)~ EXIT
 END
 */
