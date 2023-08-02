@@ -9,35 +9,229 @@
 // OTHER
 
 
-@100 = ~Voleur de la Guilde de <CHARNAME>~
+@100 = ~Voleuse de la Guilde de <CHARNAME>~
 @101 = ~Obole des voleurs de l'ombre~
-@102 = ~Ce bol permet aux membres des voleurs de l'ombre de régler leurs comptes... malgré de longues distances ou des préoccupations plus pressantes.~
+@102 = ~Ce bol semble contenir une infinité de pièces mais vous ne pouvez en saisir qu'une seule à la fois. L'obole disparaît aussitôt permettant aux membres des voleurs de l'ombre de régler leurs comptes... malgré de longues distances ou des préoccupations plus pressantes.~
 @103 = ~Biff, le voleur de l'ombre~
+@104 = ~Ce récipient dégage une aura particulière, bien que vous n'ayez pas encore réussi à discerner sont contenu, vous pouvez dors et déjà vous en saisir... Mais pour quoi faire ?~
+
+// Start
+
+@900 = ~Mesdames et Messieurs, bien le bonjour...~
+@901 = ~... Préparez-vous à accueillir le grand... que dis-je, le magnifique...~
+@902 = ~...celui qui ravira vos cœur et vous cassera les oreilles...~
+@903 = ~...Vous allez adorer le détester... Biff, l'Inc.. royable voleur de l'ombre !~
+@904 = ~Merci ! Merci ! *Hé, tu as trop improvisé sur la fin...*~
+
 
 
 // DIALOG
 
 
-@1001 = ~Salut patron... vous préférez peut-être qu'on vous donne du monsieur ?~ ~Salut patronne... vous préférez peut-être qu'on vous donne du madame ?~
+@1001 = ~Salut patron... tu préfères peut-être qu'on te donne du monsieur ?~ ~Salut patronne... tu préfères peut-être qu'on te donne du madame ?~
 @1002 = ~Mon nom est <CHARNAME> mais tu peux m'appeler comme ça te chante, tant que tu ne me manque pas de respect.~ // Charname
-@1003 = ~À vos ordre monsieur ! Heu, patron, chef...  Patron <CHARNAME> !~ ~À vos ordre madame ! Heu, patronne, cheffe...  Patronne <CHARNAME> !~
+@1003 = ~À tes ordre monsieur ! Heu, patron... Chef...  Patron <CHARNAME> !~ ~À tes ordre madame ! Heu, patronne... Cheffe...  Patronne <CHARNAME> !~
 @1004 = ~Et toi, quel est ton nom recrue ?~ // Charname
 @1005 = ~Je suis Biff, le voleur de l'ombre ! J'ai le même prénom que mon cousin mais lui il est... heu comment dire... Inculte.~
 @1006 = ~Très bien Biff, le voleur de l'ombre. Que me veux-tu ?~ // Charname
-@1007 = ~Oh ! Oui, je suis venu vous remettre l'Obole des voleurs, patron~ ~Oh ! Oui, je suis venu vous remettre l'Obole des voleurs, patronne~
+@1007 = ~Ahem... Oh ! Oui, je suis venu te remettre l'Obole des voleurs, patron~ ~Ahem... Oh ! Oui, je suis venu te remettre l'Obole des voleurs, patronne~
 @1008 = ~Pardon ?~ // Charname
-@1009 = ~Ce bol vous permettra de revenir instantanément à la guilde afin de régler votre tribut à la guilde.~
-@1010 = ~Je vois, Renal ne perds pas temps. C'est donc un moyen de transport jusqu'à Atkhatla ?~
-@1011 = ~Oui et non, ces bols sont très courant dans nos activités et leur pouvoir est limité, l'Obole ne transportera que vous et pour un temps très limité, juste ce qu'il faut pour avoir une petite conversation avec Joster le collecteur de la guilde.~
-@1012 = ~Entendu, c'est un moyen comme un autre de garder la guilde sans avoir à m’inquiéter de la durée de mes voyages.~
+@1009 = ~Ce bol te permettra de revenir instantanément à la guilde afin de régler ton tribut.~
+@1010 = ~Je vois, Renal ne perds pas temps. C'est donc un moyen de transport jusqu'à Atkhatla ?~ // Charname
+@1011 = ~Oui et non, ces artefacts sont très courant dans nos activités et leur pouvoir est limité, l'Obole ne transportera que vous et pour un temps très court, juste ce qu'il faut pour avoir une petite conversation avec Joster le collecteur de la guilde.~
+@1012 = ~Entendu, c'est un moyen comme un autre de garder un œil sur la guilde sans avoir à m’inquiéter de la durée de mes voyages.~ // Charname
 @1013 = ~Tout à fait patron.~ ~Tout à fait patronne.~
-@1014 = ~Il suffit de l'activer, cela me permettra de vous localiser et de venir vous chercher.~
+@1014 = ~Il suffit de l'activer, cela me permettra de te localiser et de venir te chercher. Pour des raisons de sécurité tu ne dois pas l'utiliser en ma présence.~
+
+
+@1050 = ~Te fais pas de bile monseigneur, il n'a pas sa langue dans la poche mais c'est un bon voleur et un ami précieux.~ ~Te fais pas de bile madame, il n'a pas sa langue dans sa poche mais c'est un bon voleur et un ami précieux.~
+@1051 = ~Et tu es ?~ // Charname
+@1052 = ~Si cela t'es égal je préfère garder mon nom pour moi, du moins pour l'instant.~
+@1053 = ~Comme tu veux, notre activité demande de la discrétion... Mais attention je ne prends pas la loyauté à la légère.~ // Charname
+@1054 = ~Ne t’inquiète pas c'est toi le patron, il n'y a pas à discuter... Mais la loyauté se mérite.~ ~Ne t’inquiète pas c'est toi la patronne, il n'y a pas à discuter... Mais la loyauté se mérite.~
+@1055 = ~Elle a du caractère, pas vrai chef ?~ ~Elle a du caractère, pas vrai cheffe ?~
+@1056 = ~Je vais réserver mon jugement à ce sujet... Où en étions nous ?~ // Charname
+@1057 = ~Mon rôle consiste à te faciliter la vie, étant donné que tes « objectifs » ne s’arrêtent pas à la gestion de la guilde et nécessitent de voyager au quatre coins de Féérune !~
+@1058 = ~Et le mien à faire fructifier cette guilde... Par moi même.~
+@1059 = ~Le prédécesseur de Biff a fini sa course encastré dans un mur, la longue agonie qu'il a subi restera légendaire pour les membres de la guilde.~
+@1060 = ~Une triste histoire, vraiment... Mais le malheur des uns fait l'opportunité des autres, Hé hé !~
+
+
+
+
+
+// DisplayStringHead
+
+
+// Biff, le voleur de l'ombre
 
 @2000 = ~Bon retour à la guilde patron~ ~Bon retour à la guilde patronne~
 
 
 @3000 = ~En avant <CHARNAME>... Heu, Chef !~ ~En avant <CHARNAME>... Heu, Cheffe !~
-@3001 = ~A bientôt patron !~ ~A bientôt patronne !~
+@3001 = ~À bientôt patron !~ ~A bientôt patronne !~
+@3002 = ~Avant l'heure, c'est pas l'heure...~
+@3003 = ~Me voila !~
+
+@3004 = ~Hou Hou ! Je suis là Patron.~ ~Hou Hou ! Je suis là Patronne.~
+@3008 = ~Dans la famille ont fait toujours de notre mieux. Mon cousin par exemple il est toujours là quand on en a besoin !~
+@3005 = ~<CHARNAME> ! Ravi de te revoir... Patron.~ ~<CHARNAME> ! Ravi de te revoir... Patronne.~
+@3006 = ~Chef ! Tu veux profiter de la cheminé ?~ ~Cheffe ! Tu veux profiter de la cheminé ?~
+@3007 = ~C'est un plaisir de bosser pour un <PRO_RACE> dans votre genre.~
+@3008 = ~Mon cousin Biff, c'est un sacré numéro. Mais il assure grave dans toute les situations.~
+@3009 = ~Alors Wendy, ça fait quoi d'être une mystérieuse voleuse de l'ombre ?~
+@3010 = ~Oups ! Mystérieuse et anonyme !~
+@3011 = ~Elle est bien plus sympa quelle en a l'air.~
+@3012 = ~J'ai fait un transport pour lui, il n'y a pas si longtemps, il présente bien ça c'est sûr.~
+@3013 = ~Ha ! ha ! Ha ! Tu as raison.~
+@3014 = ~Elle a pas sa langue dans la poche.~
+@3015 = ~Morsa m'a fait faire un tour dans son embarcation, elle navigue comme une lunatique... J'adore ça !~
+@3016 = ~<CHARNAME> m'adore... Oups, je vous avez pas vu patron.~ ~<CHARNAME> m'adore... Oups, je vous avez pas vu patronne.~
+
+@3017 = ~Libérez les voleurs ! libérez les voleurs !~
+
+@3018 = ~Rattell ! J'ai besoin d'un jus d'orange.~
+@3019 = ~Hé ! Hé !~
+
+
+@3020 = ~Non ! NON ! Non mais ça va pas la tête ?~
+@3021 = ~Patron ! le sortilège qui me lie à l'obole ne doit surtout pas être utilisé en ma présence... J'aurais pu y laisser ma peau !~ ~Patronne ! le sortilège qui me lie à l'obole ne doit surtout pas être utilisé en ma présence... J'aurais pu y laisser ma peau !~
+@3022 = ~Il y a bien assez de Biff dans les parages.~
+@3023 = ~Ouf... C'est sûr qu'un seul nous cause déjà bien des soucis.~ // Voleuse
+
+
+// Voleuse de la Guilde de <CHARNAME>
+
+
+@3999 = ~Arrête ton baratin !~
+
+@4000 = ~Il est mignon mais un tout petit peu con...~
+@4001 = ~Tiens le patron est de retour, on le voit pas souvent celui-là.~ ~Tiens la patronne est de retour, on la voit pas souvent celle-là.~
+@4002 = ~C'est un elfe après tout...~
+@4003 = ~Un bon butin peut repousser tous les problèmes.~
+@4004 = ~Quel joyeux luron ce Biff.~
+@4008 = ~Maudites Lames de la Nuit, ses membres n'ont aucun code d'honneur.~
+@4005 = ~Un sacré numéro... Tu peux parler.~
+@4006 = ~Combien de fois vais-je devoir te répéter de ne pas mentionner mon prénom.~
+@4007 = ~L'anonymat est une question de survie dans notre métier.~
+@4008 = ~Il n'apprendra jamais...~
+@4009 = ~Les <PRO_RACE>s sont tous les mêmes !~
+@4010 = ~Aran Linvail ? C'est un planqué.~
+@4011 = ~Il n'y a que le sang qui l’intéresse ce Renal à la « chevelure ensanglantée ». Il porte bien son nom tiens !~
+@4012 = ~Il a pas sa langue dans la poche.~
+@4013 = ~Kretor et trop gentil pour un voleur, ça le perdra.~
+@4014 = ~Oui, tout le monde t'adore... mais c'est parce que tu es niais !~
+@4015 = ~Varia c'est le contraire, son travail rend insensible.~
+
+@4016 = ~Je suis avec toi sur ce coup. Libérez les voleurs ! libérez les voleurs !~
+
+@4017 = ~Rattell ! J'ai besoin d'une bière.~
+@4018 = ~Raaah.~
+
+
+@5000 = ~Cet idiot a vendu la mèche...~
+
+// Fireplace
+
+@5001 = ~Pas maintenant !~ // Charname
+@5002 = ~Bouuuuh !~ // Biff
+@5003 = ~Allons ! Allons ! Ce sera pour la prochaine fois.~ // Charname
+@5004 = ~Quel gamin.~ // Voleuse
+
+
+// Jariel (SHTHLT01), Rattell (SHTHSTOR) et Lathan (SHTHLT02)
+
+
+@6000 = ~Ces deux là sont impossible.~ // Jariel
+@6001 = ~Ils n’arrêtent jamais.~ // Lathan
+@6002 = ~Mais c'est des bons voleurs~ // Lathan
+@6003 = ~Voleuse !~ // Voleuse
+@6004 = ~Oui, oui c'est ça ! T'as du chemin à faire avant de changer le patriarcat... Ma jolie...~ // Jariel
+@6005 = ~Ha ha ha... Très drôle.~ // Voleuse
+
+@6006 = ~Je suis receleur pas serveur.~ // Rattell
+@6007 = ~Pffffff !~ // Rattell
+
+
+
+@6100 = ~Alors Lathan ! On est un grand naif ?~ // Biff
+@6101 = ~De naif à idiot il n'y a qu'un pas...~ // Voleuse
+@6102 = ~C'est ça, moquez-vous... On verra à combien s’élève votre paye ce mois-ci.~ // Lathan
+@6103 = ~Noooooon...~ // Biff
+@6104 = ~Incroyable.~ // Jariel
+@6105 = ~Rabat-joies !~ // Voleuse
+
+
+
+// One Biff
+
+@6200 = ~Vraiment ?~ // Jariel
+@6201 = ~Mais que se passe t'il encore ?~ // Rattell
+@6202 = ~<CHARNAME> !~ // Lathan
+@6203 = ~Biff ! Nooon...~ // Voleuse
+@6204 = ~Je vois que tu y prends du plaisir... Sadique !~ // Voleuse
+@6205 = ~Tu n'as que ça à faire ?~ // Jariel
+@6206 = ~Il ont l'air de bien s'amuser dans l'arrière boutique...~ // Rattell
+@6207 = ~Et c'est reparti pour un tour !~ // Lathan
+
+// Dead Biff / Not a idiot
+
+@6300 = ~Ce n'est pas possible, je ne peux plus continuer.~ // Voleuse
+@6301 = ~Je n'arrive pas à y croire... Je n'ai plus rien à faire ici !~ // Biff
+@6302 = ~Faut pas croire que je vais me laisser assasiner comme ça !~ // Voleuse
+@6303 = ~<CHARNAME> ! Tu n'en vaux pas la peine...~ // Biff
+
+
+@6304 = ~Tu vas voir le sort que je réserve à ceux qui s'en prennent à <CHARNAME> !~ // Voleuse
+@6305 = ~À l'attaque ! Pour le Patron !~ ~À l'attaque ! Pour la Patronne !~ // Biff
+
+@6306 = ~(Vous êtes foudroyé par une décharge magique.)~ ~(Vous êtes foudroyée par une décharge magique.)~ // Narrateur
+@6307 = ~Biff n'est plus de ce monde !~ // Narrateur
+
+
+@6308 = ~Biff attends ! Adieu <CHARNAME> on ne peut pas te faire confiance.~ // Voleuse
+
+@6309 = ~L'obole est désactivée... Vous auriez du avoir plus de respect pour vos alliés.~ // Narrateur
+@6310 = ~(Une décharge magique s'abat sur votre tête.)~ // Narrateur
+
+
+
+// Spell 
+
+
+// IWD Teleport
+
+@10000 = ~Trappe dimensionnelle~
+
+@10001 = ~Trappe dimensionnelle
+(Transmutation)
+
+Niveau : 4
+Portée : personnelle
+Durée : instantanée
+Temps d'incantation : 1
+Zone d'effet : le lanceur
+Jet de sauvegarde : aucun
+
+Avec ce sort, le magicien se déplace partout dans la zone à portée de vue. Au lancement du sort, un Passage dimensionnelle s'ouvre devant le jeteur de sorts, qui la franchit immédiatement.~
+
+
+// BG1 Teleport
+
+@10002 = ~Passage dimensionnelle~
+
+@10003 = ~Passage dimensionnelle
+(Transmutation)
+
+Niveau : 4
+Portée : personnelle
+Durée : instantanée
+Temps d'incantation : 1
+Zone d'effet : le lanceur
+Jet de sauvegarde : aucun
+
+Avec ce sort, le magicien se déplace partout dans la zone à portée de vue. Au lancement du sort, un Passage dimensionnelle s'ouvre devant le jeteur de sorts, qui la franchit immédiatement.~
+
 
 /* =============== *
  *  WeiDU prompts  *

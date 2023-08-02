@@ -1,18 +1,37 @@
 // Dead Biff
 
 IF
-	Dead("JOJoster")
+	OR(3)
+		Dead("JOJoster")
+		Dead("JOJosBIS")
 THEN
 	RESPONSE #100
+		ApplySpell(Myself,WIZARD_BLUR)
 		DisplayStringHead(Myself,@6307)
-		ApplySpell(Myself,SAREVOK_STRIKE)
-		Wait(1)
+		Wait(4)
+		ApplySpell(Myself,CLERIC_SUNRAY)
+		Wait(3)
 		DestroySelf()
+		ActionOverride(Player1,ApplySpell(Myself,WIZARD_ENERGY_DRAIN)
 		ActionOverride(Player1,ApplySpell(Myself,SAREVOK_STRIKE))
 		DisplayStringHead(Player1,@6306)
 END
 
 // One Biff
+
+IF
+	Global("JOJosterBiffIsHere","GLOBAL",3)
+THEN
+	RESPONSE #100
+		ApplySpell(Myself,WIZARD_BLUR)
+		DisplayStringHead(Myself,@6309)
+		Wait(4)
+		ApplySpell(Myself,CLERIC_SUNRAY)
+		Wait(3)
+		DestroySelf()
+		ActionOverride(Player1,ApplySpell(Myself,WIZARD_BIGBYS_CLENCHED_FIST))
+		DisplayStringHead(Player1,@6310)
+END
 
 IF
 	Global("JOJosOneBiff","GLOBAL",0)
@@ -21,6 +40,7 @@ IF
 	!Dead("JOJoster")
 THEN
 	RESPONSE #100
+		ClearActions("JOJosVol")
 		SetGlobal("JOJosVolShowOff","GLOBAL",2) // Pause Routine JOJosVol
 		SetGlobal("JOJosterShowOff","GLOBAL",2) // Pause Routine JOJoster
 		ClearAllActions()

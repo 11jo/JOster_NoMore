@@ -4,13 +4,14 @@ README ~~
 
 VERSION ~1.0~
 
+
 ALWAYS
 
 
     //Copies tra files into the autotra-folder (to leave the originals untouched)
     DEFINE_ACTION_FUNCTION autotra_workaround BEGIN
-      COPY ~JOsterNoMore/Tra/english~				~JOsterNoMore/Tra/autotra/%LANGUAGE%~
-      COPY ~JOsterNoMore/Tra/%LANGUAGE%~					~JOsterNoMore/Tra/autotra/%LANGUAGE%~
+      COPY ~JOsterNoMore/Tra/French~				~JOsterNoMore/Tra/autotra/%LANGUAGE%~
+      COPY ~JOsterNoMore/Tra/%LANGUAGE%~			~JOsterNoMore/Tra/autotra/%LANGUAGE%~
     END
 
     LAF autotra_workaround END
@@ -26,25 +27,28 @@ ALWAYS
       STR_VAR
         tra_path = EVAL ~JOsterNoMore/Tra/autotra~
 //        noconvert_array = fl#noconvert
-        reload_array = fl#reload
-				
+        reload_array = fl#reload				
  END
+ 
+ 
 END
 
-// AUTO_TRA ~JOsterNoMore/Tra/autotra/%s/D~
+
+// AUTO_TRA ~JOsterNoMore/Tra/autotra/%s~
 		 
 LANGUAGE ~Francais~
          ~French~
          ~JOsterNoMore/Tra/French/SETUP-JOsterNoMore.tra~
 
+/*
 LANGUAGE ~English~
          ~english~
+         ~JOsterNoMore/Tra/French/SETUP-JOsterNoMore.tra~
          ~JOsterNoMore/Tra/English/SETUP-JOsterNoMore.tra~
+*/
 
 
-///////////////////////////////////
-// Start JOsterNoMore
-//////////////////////////////////
+////////////////////////// Start JOsterNoMore //////////////////////////
 
 
 BEGIN @0
@@ -53,7 +57,8 @@ LABEL ~JOsterNoMore-11jo~
 REQUIRE_PREDICATE GAME_IS ~bg2 bgt bg2ee eet~ @1
 FORBID_COMPONENT ~Setup-JOsterNoMore~ ~0~ @2
 
-///////////// Bam
+
+////////////////////////// Bam
 
 
 ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
@@ -74,7 +79,8 @@ END ELSE BEGIN
 	COPY ~JOsterNoMore/bam~ ~override~
 END
 
-///////////// Creature
+
+////////////////////////// Creature
 
 
 	COPY ~JOsterNoMore/Cre/JOJOSTER.CRE~			~override/JOJOSTER.CRE~
@@ -103,36 +109,30 @@ END
   WRITE_ASCII 0x260 ~PGUILD~ (8) // General script
   
   
-///////////// Item
+////////////////////////// Item
  
  
 	COPY ~JOsterNoMore/Itm/JOJOSTER.ITM~			~override/JOJOSTER.ITM~
   SAY NAME1 @101
   SAY NAME2 @101 
-  SAY UNIDENTIFIED_DESC @102
+  SAY UNIDENTIFIED_DESC @104
   SAY DESC @102 
   WRITE_ASCII 0x3a ~JOJoster~ (8) // Bam name
-
-/* 
-	COPY ~JOsterNoMore/Itm/JOJOSTSP.ITM~			~override/JOJOSTER.ITM~
-  SAY NAME1 @101
-  SAY NAME2 @101 
-  SAY UNIDENTIFIED_DESC @102
-  SAY DESC @102 
-  WRITE_ASCII 0x3a ~JOJoster~ (8) // Bam name
- */ 
  
 
-///////////// Spell 
+////////////////////////// Spell 
   
+  
+ ////////////////////////// Unused  
  /* 
-  	COPY ~JOsterNoMore/Spl/JOJOSTER.SPL~			~override/JOJOSTER.SPL~
+  	COPY ~JOsterNoMore/Spl/JOJOSTER.SPL~				~override/JOJOSTER.SPL~
   SAY NAME1 @101
   SAY NAME2 @101 
   SAY UNIDENTIFIED_DESC @102
   SAY DESC @102 
 */
 
+/*
 // IWD Dimension Door
 
   	COPY ~JOsterNoMore/Spl/SpDoor/JOWI402.SPL~			~override/JOWI402.SPL~
@@ -153,28 +153,27 @@ END
 
 // Stolen from Nostalgia pack
 
-COPY ~JOsterNoMore/Spl/DiDoor~ ~override~
+COPY ~JOsterNoMore/Spl/DiDoor~							~override~
   
 //END  
+ */ 
+////////////////////////// Unused 
+
+  
+////////////////////////// Effect  
   
   
-  
-  
-///////////// Effect  
-  
-  
-  	COPY ~JOsterNoMore/Eff/JOJOSTER.EFF~			~override/JOJOSTER.EFF~
+  	COPY ~JOsterNoMore/Eff/JOJOSTER.EFF~	~override/JOJOSTER.EFF~
 
 
-///////////// Dlg
+////////////////////////// Dlg
 
 
 	COMPILE EVALUATE_BUFFER ~JOsterNoMore/Dlg/JOJOSTER.D~	~override~
 	
-	// COMPILE EVALUATE_BUFFER ~JOsterNoMore/Dlg/JOJOSTER.D~	~override~
-	
 
-///////////// Add General script	
+////////////////////////// Add General script name for Lathan, Jariel and Rattell
+	
 	
 	COPY_EXISTING ~SHTHLT02.CRE~			~override/SHTHLT02.CRE~
   WRITE_ASCII 0x260 ~JOLathan~ (8) // General script
@@ -186,7 +185,8 @@ COPY ~JOsterNoMore/Spl/DiDoor~ ~override~
   WRITE_ASCII 0x260 ~JORattel~ (8) // General script
 
 
-///////////// Baf
+////////////////////////// Extand existing script
+  
   
 	EXTEND_BOTTOM ~BALDUR.BCS~				~JOsterNoMore/Baf/JOBaldur.BAF~
   
@@ -194,13 +194,19 @@ COPY ~JOsterNoMore/Spl/DiDoor~ ~override~
 	
 	EXTEND_BOTTOM ~AR0322.BCS~				~JOsterNoMore/Baf/JOAR0322.BAF~
 	
+	EXTEND_BOTTOM ~JOSTER.BCS~				~JOsterNoMore/Baf/Joster.BAF~
+
+////////////////////////// Unused 	
+	//EXTEND_BOTTOM ~PGUILD.BCS~				~JOsterNoMore/Baf/JOLathan.Jariel.BAF~
+////////////////////////// Unused 
+
+
+////////////////////////// Add new script
+
+
 	COMPILE ~JOsterNoMore/Baf/JOJoster.BAF~	~override~
 	
 	COMPILE ~JOsterNoMore/Baf/JOJOSVOL.BAF~	~override~
-	
-	EXTEND_BOTTOM ~JOSTER.BCS~				~JOsterNoMore/Baf/Joster.BAF~
-	
-	EXTEND_BOTTOM ~PGUILD.BCS~				~JOsterNoMore/Baf/JOLathan.Jariel.BAF~
 	
 	COMPILE ~JOsterNoMore/Baf/JOLathan.BAF~	~override~
 	

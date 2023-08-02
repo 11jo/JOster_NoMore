@@ -7,6 +7,9 @@ IF
 	AreaCheck("AR0322")
 	Global("JOJosterBiffIsHere","GLOBAL",2)
 	!InMyArea("JOJoster")
+	!Dead("JOJosvol")
+	!Dead("JOJoster")
+	!Dead("JOJosBIS")
 THEN
 	RESPONSE #100
 		ScreenShake([5.5],5)
@@ -31,6 +34,7 @@ THEN
 		Continue()
 END
 
+/*
 // Relaunch
 
 IF
@@ -49,25 +53,37 @@ THEN
 		SetGlobal("JOJosterShowOff","GLOBAL",1)
 END
 
+*/
+
 // Start
 
 IF
 	Global("JOJosterBiffIsHere","GLOBAL",0)
+	InMyArea(Player1)
 THEN
 	RESPONSE #100
+		Wait(10)
 		// CreateCreature("JOJoster",[1076.474],15)
 		CreateCreature("JOJosVol",[475.329],30)
-		//ActionOverride("JOJoster",MoveToPointNoInterrupt([833.220]))
-		ActionOverride("JOJosVol",MoveToPointNoInterrupt([710.185]))
-		ActionOverride("JOJosVol",FaceObject(Player1))
+		ActionOverride("JOJosVol",MoveToPointNoInterrupt([663.281]))
+		ActionOverride("JOJosvol",DisplayStringHead(Myself,@900))
 		Wait(4)
+		ActionOverride("JOJosVol",MoveToPointNoInterrupt([710.185])		
+		Wait(2)
+		ActionOverride("JOJosvol",DisplayStringHead(Myself,@901))		
+		Wait(4)
+		ActionOverride("JOJosVol",FaceObject(Player1))
+		ActionOverride("JOJosvol",DisplayStringHead(Myself,@902))
+		Wait(4)
+		ActionOverride("JOJosvol",DisplayStringHead(Myself,@903)
 		CreateCreatureDoor("JOJoster",[833.220],S)
+		ActionOverride("JOJoster",DisplayStringHead(Myself,@904))
+		Wait(6)
 		ActionOverride("JOJoster",FaceObject(Player1))
 		SetGlobal("JOJosterVolIsHere","GLOBAL",1)
 		SetGlobal("JOJosterBiffIsHere","GLOBAL",1)
 		Continue()
 END
-
 
 // Ama Revenge
 

@@ -4,9 +4,9 @@ IF
 	Global("JOJosterLathan","GLOBAL",4)
 THEN
 	RESPONSE #100
-		SetGlobal("JOJosterLathan","GLOBAL",5)
-		Wait(3)
 		DisplayStringHead(Myself,@6104)  // Incroyable.
+		Wait(3)
+		SetGlobal("JOJosterLathan","GLOBAL",5)
 END
 
 		// Routine / Jariel / Lathan
@@ -17,19 +17,18 @@ IF
 	Global("JOJosterJarLath","GLOBAL",2)
 THEN
 	RESPONSE #100
-		SetGlobal("JOJosterJarLath","GLOBAL",3)
-		Wait(2)
 		DisplayStringHead(Myself,@6000)  // Ces deux là sont impossible.
-		Continue()
+		Wait(2)
+		SetGlobal("JOJosterJarLath","GLOBAL",3)
 END
 	
 IF
 	Global("JOJosterJarLath","GLOBAL",6)
 THEN
 	RESPONSE #100
-		SetGlobal("JOJosterJarLath","GLOBAL",7)
-		Wait(3)
 		DisplayStringHead(Myself,@6004)  // Oui, oui ! T'as du chemin à faire avant de changer le patriarcat... Ma jolie...
+		Wait(3)
+		SetGlobal("JOJosterJarLath","GLOBAL",7)
 END
 
 
@@ -39,17 +38,17 @@ IF
 	Global("JOJosOneBiff","GLOBAL",3)
 THEN
 	RESPONSE #100
-		SetGlobal("JOJosOneBiff","GLOBAL",4)
-		Wait(2)
 		DisplayStringHead(Myself,@6200)	  // Vraiment ?
+		Wait(2)
+		SetGlobal("JOJosOneBiff","GLOBAL",4)
 END
 
 IF
 	Global("JOJosOneBiff","GLOBAL",10)
 THEN
 	RESPONSE #100
-		SetGlobal("JOJosOneBiff","GLOBAL",5)
-		Wait(2)
 		DisplayStringHead(Myself,@6205)	 // Tu n'a que ça à faire ?
+		Wait(2)
+		SetGlobal("JOJosOneBiff","GLOBAL",5)
 END
 

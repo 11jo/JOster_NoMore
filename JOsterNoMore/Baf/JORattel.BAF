@@ -4,19 +4,18 @@ IF
 	Global("JOJosterRattell","GLOBAL",1)
 THEN
 	RESPONSE #100
-		SetGlobal("JOJosterRattell","GLOBAL",2)
-		Wait(2)
 		DisplayStringHead(Myself,@6006)
-		Continue()
+		Wait(2)
+		SetGlobal("JOJosterRattell","GLOBAL",2)
 END
 
 IF
 	Global("JOJosterRattell","GLOBAL",4)
 THEN
 	RESPONSE #100
-		SetGlobal("JOJosterRattell","GLOBAL",5)
-		Wait(1)
 		DisplayStringHead(Myself,@6007)
+		Wait(2)
+		SetGlobal("JOJosterRattell","GLOBAL",5)
 END
 
 
@@ -27,7 +26,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("JOJosOneBiff","GLOBAL",5)
-		Wait(2)
+		Wait(1)
 		DisplayStringHead(Myself,@6201)	
 END
 
@@ -36,6 +35,6 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("JOJosOneBiff","GLOBAL",10)
-		Wait(2)
+		Wait(1)
 		DisplayStringHead(Myself,@6206)	
 END

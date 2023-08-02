@@ -4,9 +4,9 @@ IF
 	Global("JOJosterLathan","GLOBAL",2)
 THEN
 	RESPONSE #100
-		SetGlobal("JOJosterLathan","GLOBAL",3)
-		Wait(3)
 		DisplayStringHead(Myself,@6102)
+		Wait(3)
+		SetGlobal("JOJosterLathan","GLOBAL",3)
 END
 
 	// Routine / Jariel / Lathan
@@ -17,18 +17,17 @@ IF
 	Global("JOJosterJarLath","GLOBAL",3)
 THEN
 	RESPONSE #100
-		SetGlobal("JOJosterJarLath","GLOBAL",4)
 		DisplayStringHead(Myself,@6001)
-		Continue()
+		SetGlobal("JOJosterJarLath","GLOBAL",4)
 END
 	
 IF
 	Global("JOJosterJarLath","GLOBAL",4)
 THEN
 	RESPONSE #100
-		SetGlobal("JOJosterJarLath","GLOBAL",5)
-		Wait(2)
 		DisplayStringHead(Myself,@6002)
+		Wait(2)
+		SetGlobal("JOJosterJarLath","GLOBAL",5)
 END
 
 
@@ -38,16 +37,16 @@ IF
 	Global("JOJosOneBiff","GLOBAL",2)
 THEN
 	RESPONSE #100
-		SetGlobal("JOJosOneBiff","GLOBAL",3)
-		Wait(2)
 		DisplayStringHead(Myself,@6202)	
+		Wait(1)
+		SetGlobal("JOJosOneBiff","GLOBAL",3)
 END
 
 IF
 	Global("JOJosOneBiff","GLOBAL",7)
 THEN
 	RESPONSE #100
-		SetGlobal("JOJosOneBiff","GLOBAL",8)
-		Wait(2)
 		DisplayStringHead(Myself,@6207)	
+		Wait(1)
+		SetGlobal("JOJosOneBiff","GLOBAL",8)
 END
