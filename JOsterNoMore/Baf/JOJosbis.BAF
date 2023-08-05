@@ -90,9 +90,12 @@ THEN
 		Wait(1)	
 		DisplayStringHead(Myself,@3002)  // Avant l'heure, c'est pas l'heure...
 		FaceObject(Player1(Myself))
-		ReallyForceSpell(Myself,DRYAD_TELEPORT)
+		ReallyForceSpellRES("SPPR011",Myself)
+		//ReallyForceSpell(Myself,NOSTALGIA_DOOR)
 		Wait(1)	
 		DisplayStringHead(Myself,@3001)  // À bientôt patron !
+		Wait(2)	
+		DestroySelf()
 END
 
 IF
@@ -108,7 +111,9 @@ THEN
 		Wait(2)
 		DisplayStringHead(Myself,@3000)  // En avant <CHARNAME>... Heu, Chef !
 		Wait(3)
+		//ReallyForceSpell(Myself,NOSTALGIA_DOOR)
+		//ReallyForceSpell(Player1,NOSTALGIA_DOOR)	
+		ActionOverride(Player1,ReallyForceSpellRES("SPPR011",Player1))
 		SetGlobal("JOJosterGetPaid","GLOBAL",1)
 		ReallyForceSpell(Myself,DRYAD_TELEPORT)
-		ReallyForceSpell(Player1,DRYAD_TELEPORT)
 END

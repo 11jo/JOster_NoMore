@@ -1,8 +1,46 @@
 BEGIN ~JOJoster~
 
+// Dialogues
+
+IF ~AreaCheck("AR0322")
+	Global("JOJosterBiffIsHere","GLOBAL",2)
+	!Global("JOJosterVolUpstair","GLOBAL",1)~ THEN BEGIN JOJosterBiffIsHere
+SAY @2000
+	IF ~~ THEN DO ~
+		ClearActions("JOJoster")
+		SetGlobal("JOJosVolShowOff","GLOBAL",1)
+		SetGlobal("JOJosterShowOff","GLOBAL",1)
+		MoveToPointNoInterrupt([833.220])~ EXIT
+END
+
+IF ~AreaCheck("AR0322")
+	Global("JOJosterVolUpstair","GLOBAL",1)~ THEN BEGIN JOJosterVolUpstair
+SAY @3024
+	IF ~~ THEN DO ~
+		ClearActions("JOJoster")
+		MoveToPointNoInterrupt([833.220])~ EXIT
+END
+
+IF ~AreaCheck("AR0321")
+	Global("JOJosterDownstair","GLOBAL",1)~ THEN BEGIN JOJosterDownstair
+SAY @3032
+	IF ~~ THEN REPLY @3033 DO ~
+		Wait(2)
+		DisplayStringHead(Myself,@3034)	
+		MoveToPointNoInterrupt([279.516])
+		DisplayStringHead(Myself,@3035)	
+		Wait(3)
+		SetGlobal("JOJosterDownstair","GLOBAL",0)
+		SetGlobal("JOJosterThieves","GLOBAL",1)
+		MoveBetweenAreas("AR0322",[833.220],S)~ EXIT
+END
+
+// First dialogue
+
+
 IF ~NumTimesTalkedTo(0) See([PC]) Global("JOJosterBiffIsHere","GLOBAL",1)~ THEN BEGIN 0
-  SAY @1001
-  IF ~~ THEN REPLY @1002 GOTO 1
+SAY @1001
+	IF ~~ THEN REPLY @1002 GOTO 1
 END
 
 IF ~~ THEN BEGIN 1
@@ -52,15 +90,77 @@ END
 
 IF ~~ THEN BEGIN 8
   SAY @1060
-  IF ~~ THEN DO ~GiveItemCreate("JOJoster",[PC],0,0,0) SetGlobal("JOJosterBiffIsHere","GLOBAL",2)~ EXIT
+  IF ~~ THEN DO ~
+  GiveItemCreate("JOJoster",[PC],0,0,0)
+  SetGlobal("JOJosterBiffIsHere","GLOBAL",2)
+  ~ EXIT
 END
 
-IF ~Global("JOJosterBiffIsHere","GLOBAL",2) AreaCheck("AR0322")~ THEN BEGIN JOJosterBiffIsHere
-  SAY @2000
-  IF ~~ THEN EXIT
+
+BEGIN ~JOJOSVOL~
+
+// Dialogues
+
+IF ~
+AreaCheck("AR0322")
+!Global("JOJosterDownstair","GLOBAL",1)
+Global("JOJosterWendySpoiler","GLOBAL",0)
+Global("JOJosterBiffIsHere","GLOBAL",2)
+~ THEN BEGIN JOJosVolIsHere
+  SAY @4900
+  IF ~~ THEN DO ~
+  ClearActions("JOJosVol")
+  SetGlobal("JOJosVolShowOff","GLOBAL",1)
+  SetGlobal("JOJosterShowOff","GLOBAL",1)
+  MoveToPointNoInterrupt([710.185])
+  ~ EXIT
 END
 
-BEGIN ~JOJosVol~
+IF ~
+AreaCheck("AR0322")
+Global("JOJosterBiffIsHere","GLOBAL",2)
+Global("JOJosterWendySpoiler","GLOBAL",1)
+!Global("JOJosterDownstair","GLOBAL",1)
+~ THEN BEGIN JOJosVolIsWen
+  SAY @5000
+  IF ~~ THEN DO ~
+  ClearActions("JOJosVol")
+  SetGlobal("JOJosVolShowOff","GLOBAL",1)
+  SetGlobal("JOJosterShowOff","GLOBAL",1)
+  SetGlobal("JOJosterWendySpoiler","GLOBAL",0)
+  MoveToPointNoInterrupt([710.185])
+  ~ EXIT
+END
+
+IF ~
+AreaCheck("AR0322")
+Global("JOJosterDownstair","GLOBAL",1)
+~ THEN BEGIN JOJosterBiffDownstair
+  SAY @4901
+  IF ~~ THEN DO ~
+  ClearActions("JOJosVol")
+  MoveToPointNoInterrupt([710.185])
+  ~ EXIT
+END
+
+IF ~AreaCheck("AR0323")
+	Global("JOJosterVolUpstair","GLOBAL",1)~ THEN BEGIN JOJosVolUpstair
+SAY @4024
+	IF ~~ THEN REPLY @4025 DO ~
+		Wait(2)
+		DisplayStringHead(Myself,@4026)	
+		Wait(1)
+		MoveToPointNoInterrupt([140.579])
+		DisplayStringHead(Myself,@4027)	
+		Wait(3)
+		SetGlobal("JOJosterVolUpstair","GLOBAL",0)
+		SetGlobal("JOJosVolThieves","GLOBAL",1)
+		MoveBetweenAreas("AR0322",[710.185],S)~ EXIT
+END
+
+
+
+// First dialogue
 
 IF ~~ THEN BEGIN 1JOJosVol
   SAY @1050
@@ -87,8 +187,4 @@ IF ~~ THEN BEGIN 5JOJosVol
   IF ~~ THEN EXTERN JOJoster 8
 END
 
-IF ~Global("JOJosterBiffIsHere","GLOBAL",2) AreaCheck("AR0322")~ THEN BEGIN JOJosterVolIsHere
-  SAY @5000
-  IF ~~ THEN EXIT
-END
 

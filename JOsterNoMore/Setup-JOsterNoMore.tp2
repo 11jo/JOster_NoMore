@@ -56,6 +56,8 @@ DESIGNATED 0
 LABEL ~JOsterNoMore-11jo~
 REQUIRE_PREDICATE GAME_IS ~bg2 bgt bg2ee eet~ @1
 FORBID_COMPONENT ~Setup-JOsterNoMore~ ~0~ @2
+	
+	APPEND ~SPELL.IDS~ ~1011 NOSTALGIA_DOOR~  UNLESS ~1011 NOSTALGIA_DOOR~
 
 
 ////////////////////////// Bam
@@ -132,7 +134,7 @@ END
   SAY DESC @102 
 */
 
-/*
+
 // IWD Dimension Door
 
   	COPY ~JOsterNoMore/Spl/SpDoor/JOWI402.SPL~			~override/JOWI402.SPL~
@@ -143,9 +145,9 @@ END
 
 // BG1 Dimension Door
 
-//ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
 
-  	COPY ~JOsterNoMore/Spl/SpDoor/JOBG402.SPL~			~override/JOBG402.SPL~
+  	COPY ~JOsterNoMore/Spl/SpDoor/JOBG402.SPL~			~override/SPPR011.SPL~
   SAY NAME1 @10002
   SAY NAME2 @10002 
   SAY UNIDENTIFIED_DESC @10003
@@ -153,10 +155,11 @@ END
 
 // Stolen from Nostalgia pack
 
-COPY ~JOsterNoMore/Spl/DiDoor~							~override~
+	COPY ~JOsterNoMore/Spl/DiDoor~							~override~
   
-//END  
- */ 
+END  
+
+
 ////////////////////////// Unused 
 
   
@@ -170,6 +173,7 @@ COPY ~JOsterNoMore/Spl/DiDoor~							~override~
 
 
 	COMPILE EVALUATE_BUFFER ~JOsterNoMore/Dlg/JOJOSTER.D~	~override~
+	//COMPILE EVALUATE_BUFFER ~JOsterNoMore/Dlg/JOJOSVol.D~	~override~
 	
 
 ////////////////////////// Add General script name for Lathan, Jariel and Rattell

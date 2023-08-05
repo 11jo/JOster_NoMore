@@ -44,6 +44,7 @@ THEN
 		ClearActions("JOJosVol")
 		SetGlobal("JOJosVolShowOff","GLOBAL",2) // Pause Routine JOJosVol
 		SetGlobal("JOJosterShowOff","GLOBAL",2) // Pause Routine JOJoster
+		FaceObject("shthlt02")
 		DisplayStringHead(Myself,@6100)
 		Wait(3)
 		SetGlobal("JOJosterLathan","GLOBAL",1)
@@ -53,6 +54,7 @@ IF
 	Global("JOJosterLathan","GLOBAL",3)
 THEN
 	RESPONSE #100
+		FaceObject("shthlt02")
 		DisplayStringHead(Myself,@6103)
 		Wait(3)
 		SetGlobal("JOJosterLathan","GLOBAL",4)
@@ -64,14 +66,30 @@ END
 // Original Biff
 
 IF
-	See([PC])
+	InMyArea([PC])
+	InMyArea("JOJosvol")
 	Global("JOJosterGoBackNow","GLOBAL",1) 
 	Global("JOJosterGoBykNow","GLOBAL",0)
 THEN
 	RESPONSE #100
 		SetGlobal("JOJosVolGoBackNow","GLOBAL",1)
 		SetGlobal("JOJosterGoBykNow","GLOBAL",1)
+		SetGlobal("JOJosterThieves","GLOBAL",2)
+		DisplayStringHead(Myself,@3001)		
+		MoveToPointNoInterrupt([833.220])
+END
+
+IF
+	InMyArea([PC])
+	!InMyArea("JOJosvol")
+	Global("JOJosterGoBackNow","GLOBAL",1) 
+THEN
+	RESPONSE #100
+		SetGlobal("JOJosterGoBackNow","GLOBAL",2)
+		SetGlobal("JOJosterThieves","GLOBAL",2)
+		Wait(2)
 		DisplayStringHead(Myself,@3001)
+		MoveToPointNoInterrupt([833.220])
 END
 
 
@@ -118,6 +136,160 @@ THEN
 		EscapeArea()
 END
 
+// Thieves are here
+
+
+IF
+	Global("PGThievesLeave","GLOBAL",0)
+	Global("JOJosterThieves","GLOBAL",0)
+	Global("JOJosterGetPaid","GLOBAL",0)	
+THEN
+	RESPONSE #50
+		SetGlobal("JOJosVolShowOff","GLOBAL",2) // Pause Routine JOJosVol
+		SetGlobal("JOJosterShowOff","GLOBAL",2) // Pause Routine JOJoster
+		MoveToPointNoInterrupt([747.500])
+		Wait(1)
+		FaceObject("Hanz")
+		Wait(1)
+		DisplayStringHead(Myself,@7010)
+		ActionOverride("Hanz",FaceObject("JOJoster"))
+		Wait(2)
+		ActionOverride("Hanz",DisplayStringHead(Myself,@7011))
+		Wait(4)
+		MoveToPointNoInterrupt([747.500])
+		Wait(1)
+		DisplayStringHead(Myself,@7012)
+		Wait(2)
+		ActionOverride("JOJosVol",FaceObject("JOJoster"))
+		ActionOverride("Hanz",FaceObject("JOJoster"))
+		ActionOverride("Milph",FaceObject("JOJoster"))
+		ActionOverride("Kretor",FaceObject("JOJoster"))
+		ActionOverride("Morsa",FaceObject("JOJoster"))
+		ActionOverride("Varia",FaceObject("JOJoster"))	
+		Wait(3)	
+		ActionOverride("shthstor",DisplayStringHead(Myself,@7013)
+		Wait(3)
+		ActionOverride("Hanz",DisplayStringHead(Myself,@7014))
+		Wait(2)
+		ActionOverride("Milph",DisplayStringHead(Myself,@7015))
+		Wait(2)
+		ActionOverride("Kretor",DisplayStringHead(Myself,@7016))
+		Wait(2)
+		ActionOverride("Morsa",DisplayStringHead(Myself,@7017))
+		Wait(3)
+		ActionOverride("Varia",DisplayStringHead(Myself,@7018))
+		Wait(3)
+		ActionOverride("JOJosVol",DisplayStringHead(Myself,@7019))
+		SetGlobal("JOJosterThieves","GLOBAL",1) // Separate some talk
+		Continue()
+	RESPONSE #50
+		SetGlobal("JOJosVolShowOff","GLOBAL",2) // Pause Routine JOJosVol
+		SetGlobal("JOJosterShowOff","GLOBAL",2) // Pause Routine JOJoster
+		NoAction()
+		SetGlobal("JOJosterThieves","GLOBAL",1)
+END
+
+IF
+	Global("PGThievesLeave","GLOBAL",0)
+	Global("JOJosterThieves","GLOBAL",1)
+	Global("JOJosterGetPaid","GLOBAL",0)	
+THEN
+	RESPONSE #50
+		Wait(20)
+		MoveToPointNoInterrupt([1004.336])
+		FaceObject("Morsa")
+		DisplayStringHead(Myself,@7020)
+		ActionOverride("Morsa",FaceObject("JOJoster"))
+		Wait(3)
+		ActionOverride("Morsa",DisplayStringHead(Myself,@7021))
+		Wait(5)
+		DisplayStringHead(Myself,@7022)
+		SetGlobal("JOJosterThieves","GLOBAL",2)
+		Continue()
+	RESPONSE #50
+		Wait(10)
+		MoveToPointNoInterrupt([875.595])
+		FaceObject("Varia")
+		DisplayStringHead(Myself,@7023)
+		ActionOverride("Varia",FaceObject("JOJoster"))
+		Wait(2)
+		ActionOverride("Varia",DisplayStringHead(Myself,@7024))
+		Wait(4)
+		DisplayStringHead(Myself,@7025)
+		Wait(4)
+		ActionOverride("Varia",DisplayStringHead(Myself,@7026))
+		Wait(4)
+		DisplayStringHead(Myself,@7027)
+		Wait(3)
+		ActionOverride("Varia",DisplayStringHead(Myself,@7028))
+		Wait(3)
+		MoveToPointNoInterrupt([875.595])
+		DisplayStringHead(Myself,@7029)
+		Wait(1)
+		ActionOverride("Varia",MoveToPointNoInterrupt([875.595]))
+		Wait(1)
+		MoveToPointNoInterrupt([911.364])
+		ActionOverride("Varia",DisplayStringHead(Myself,@7030))
+		Wait(3)
+		DisplayStringHead(Myself,@7031)
+		Wait(1)
+		ActionOverride("Varia",MoveToPointNoInterrupt([911.364]))
+		Wait(1)
+		MoveToPointNoInterrupt([1026.326])		
+		ActionOverride("Varia",DisplayStringHead(Myself,@7032))
+		Wait(3)
+		DisplayStringHead(Myself,@7033)
+		Wait(1)
+		ActionOverride("Varia",MoveToPointNoInterrupt([1026.326]))	
+		Wait(1)
+		MoveToPointNoInterrupt([1059.429])
+		ActionOverride("Varia",DisplayStringHead(Myself,@7034))
+		Wait(3)
+		DisplayStringHead(Myself,@7035)
+		MoveToPointNoInterrupt([875.595])		
+		Wait(2)
+		ActionOverride("Varia",DisplayStringHead(Myself,@7036))	
+		Wait(1)
+		ActionOverride("Varia",MoveToPointNoInterrupt([875.595]))
+		Wait(1)
+		ActionOverride("Varia",FaceObject("JOJoster"))
+		Wait(1)
+		FaceObject("Varia")
+		Wait(3)
+		ActionOverride("Varia",SetSequence(SEQ_ATTACK))
+		Wait(1)
+		SetSequence(SEQ_DAMAGE)
+		DisplayStringHead(Myself,@7037)
+		Wait(2)	
+		ActionOverride("Varia",DisplayStringHead(Myself,@7038))
+		Wait(3)
+		DisplayStringHead(Myself,@7039)
+		Wait(2)	
+		ActionOverride("JOJosVol",DisplayStringHead(Myself,@7040))
+		Wait(3)
+		DisplayStringHead(Myself,@7041)
+		SetGlobal("JOJosterThieves","GLOBAL",2)
+		Continue()
+END
+				
+IF
+	Global("PGThievesLeave","GLOBAL",1)
+	!Global("JOJosterThieves","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("JOJosterThieves","GLOBAL",0)
+		ClearActions("JOJoster")
+		Wait(2)
+		DisplayStringHead(Myself,@7042)
+		MoveToPointNoInterrupt([833.220])
+		Wait(6)
+		SetGlobal("JOJosterThieves","GLOBAL",0)
+		SetGlobal("JOJosVolShowOff","GLOBAL",1)  // Relaunch routine JOJosVol
+		SetGlobal("JOJosterShowOff","GLOBAL",1) // Relaunch Routine JOJoster
+		Continue()
+END
+
+
 // Routine Link
 
 IF
@@ -151,8 +323,9 @@ IF
 	Global("JOJosterRattell","GLOBAL",3)
 THEN
 	RESPONSE #100
+		MoveToPointNoInterrupt([429.429])
 		DisplayStringHead(Myself,@3018)	
-		Wait(4)
+		Wait(3)
 		SetGlobal("JOJosterRattell","GLOBAL",4)
 END
 
@@ -163,6 +336,10 @@ THEN
 		SetGlobal("JOJosterRattell","GLOBAL",0) // Rattell 
 		DisplayStringHead(Myself,@3019)	
 		Wait(2)
+		MoveToPointNoInterrupt([833.220])
+		Wait(2)
+		ActionOverride("JOJosVol",DisplayStringHead(Myself,@4028))
+		Wait(4)
 		SetGlobal("JOJosVolShowOff","GLOBAL",1)  // Relaunch routine JOJosVol
 		SetGlobal("JOJosterShowOff","GLOBAL",1) // Relaunch Routine JOJoster
 		Continue()
@@ -196,8 +373,28 @@ THEN
 END
 */
 
+/*
+// Separate some actions
+
 IF
 	Global("JOJosterShowOff","GLOBAL",1)
+THEN
+	RESPONSE #50
+		NoAction()
+		Wait(20)
+		SetGlobal("JOJosterShowOff","GLOBAL",0)
+		Continue()
+	RESPONSE #50
+		NoAction()
+		Wait(20)
+		SetGlobal("JOJosterShowOff","GLOBAL",10)
+		Continue()
+END
+*/
+
+IF
+	Global("JOJosterShowOff","GLOBAL",1)
+	InMyArea("JOJosvol")
 THEN
 	RESPONSE #100
 		NoAction()
@@ -207,24 +404,31 @@ THEN
 END
 
 IF
-	Global("JOJosterShowOff","GLOBAL",0)
 	AreaCheck("AR0322")
 	Global("JOJosterBiffIsHere","GLOBAL",2)
-	!Dead("JOJosvol")
+	Global("JOJosterShowOff","GLOBAL",0)
 	See([PC])
+	!Dead("JOJosvol")
 	!Global("JOJosterGoBackNow","GLOBAL",1)
 	!Global("JOJosterGetPaid","GLOBAL",1)
 THEN
 	RESPONSE #20
 		SetGlobal("JOJosterShowOff","GLOBAL",1)
+		FaceObject(Player1)
+		DisplayStringHead(Myself,@2999)
+	RESPONSE #20
+		SetGlobal("JOJosterShowOff","GLOBAL",1)
+		FaceObject(Player1)
 		DisplayStringHead(Myself,@3004)
 	RESPONSE #20
 		SetGlobal("JOJosterShowOff","GLOBAL",1)
+		FaceObject(Player1)
 		DisplayStringHead(Myself,@3005)
 	RESPONSE #20
 		ClearActions("JOJosVol")
 		SetGlobal("JOJosVolShowOff","GLOBAL",2) // Pause Routine JOJosVol
 		SetGlobal("JOJosterShowOff","GLOBAL",2) // Pause Routine JOJoster
+		FaceObject(Player1)
 		DisplayStringHead(Myself,@3006)
 		Wait(3)		
 		ActionOverride(Player1,DisplayStringHead(Myself,@5001))
@@ -233,16 +437,19 @@ THEN
 		Wait(3)
 		ActionOverride(Player1,DisplayStringHead(Myself,@5003))	
 		Wait(2)
+		ActionOverride("JOJosvol",FaceObject("JOJoster"))
 		ActionOverride("JOJosvol",DisplayStringHead(Myself,@5004))
 		SetGlobal("JOJosVolShowOff","GLOBAL",1)  // Relaunch routine JOJosVol
 		SetGlobal("JOJosterShowOff","GLOBAL",1) // Relaunch Routine JOJoster
 	RESPONSE #20
 		SetGlobal("JOJosterShowOff","GLOBAL",1)
+		FaceObject(Player1)
 		DisplayStringHead(Myself,@3007)
 	RESPONSE #20
 		ClearActions("JOJosVol")
 		SetGlobal("JOJosVolShowOff","GLOBAL",2) // Pause Routine JOJosVol
 		SetGlobal("JOJosterShowOff","GLOBAL",2) // Pause Routine JOJoster
+		FaceObject(Player1)
 		Wait(2)
 		DisplayStringHead(Myself,@3008)	
 		Wait(4)
@@ -252,9 +459,11 @@ THEN
 		ClearActions("JOJosVol")
 		SetGlobal("JOJosVolShowOff","GLOBAL",2) // Pause Routine JOJosVol
 		SetGlobal("JOJosterShowOff","GLOBAL",2) // Pause Routine JOJoster
+		FaceObject("JOJosvol")
 		Wait(2)
 		DisplayStringHead(Myself,@3009)	
 		Wait(4)
+		SetGlobal("JOJosterWendySpoiler","GLOBAL",1)
 		SetGlobal("JOJosterWendyOff","GLOBAL",1)
 		Continue()
 //  RESPONSE #20
@@ -271,17 +480,77 @@ THEN
 		DisplayStringHead(Myself,@3014)	
 	RESPONSE #20
 		SetGlobal("JOJosterShowOff","GLOBAL",1)
+		FaceObject("JOJosvol")
 		DisplayStringHead(Myself,@3015)	
 	RESPONSE #20
 		ClearActions("JOJosVol")
 		SetGlobal("JOJosVolShowOff","GLOBAL",2) // Pause Routine JOJosVol
 		SetGlobal("JOJosterShowOff","GLOBAL",2) // Pause Routine JOJoster
+		FaceObject("JOJosvol")
 		Wait(2)
 		DisplayStringHead(Myself,@3016)	
+		Wait(1)
+		FaceObject(Player1)
 		Wait(4)
 		SetGlobal("JOJosterOffOff","GLOBAL",1)
-		Continue()
+		Continue()	
+	RESPONSE #20 // TO SEE Separate some actions
+		SetGlobal("JOJosVolShowOff","GLOBAL",2) // Pause Routine JOJosVol
+		SetGlobal("JOJosterShowOff","GLOBAL",2) // Pause Routine JOJoster
+		ActionOverride("JOJosvol",FaceObject("JOJoster"))
+		ActionOverride("JOJosVol",DisplayStringHead(Myself,@3031))	
+		Wait(2)		
+		FaceObject("JOJosvol")
+		DisplayStringHead(Myself,@3025)	
+		Wait(1)
+		//ActionOverride("shthstor",DisplayStringHead(Myself,@xxx))		
+		//ActionOverride("shthlt02",DisplayStringHead(Myself,@xxx))		
+		//ActionOverride("shthlt01",DisplayStringHead(Myself,@xxx))		
+		MoveToPointNoInterrupt([482.318])
+		Wait(1)
+		FaceObject("JOJosvol")
+		DisplayStringHead(Myself,@3026)	
+		Wait(3)
+		SetGlobal("JOJosterDownstair","GLOBAL",1)
+		MoveBetweenAreas("AR0321",[279.516],S)
 END
+
+IF
+	AreaCheck("AR0321")
+	Global("JOJosterBiffIsHere","GLOBAL",2)
+	See([GOODCUTOFF])
+	!Dead("JOJosvol")
+	!GlobalGT("JOJosterGoBackNow","GLOBAL",0)
+	!GlobalGT("JOJosterGetPaid","GLOBAL",0)
+THEN
+	RESPONSE #20
+		MoveToPoint([262.719])
+		Wait(3)
+		MoveToPoint([605.700])
+		Wait(3)
+		FaceObject(LastSeenBy(Myself))
+		DisplayStringHead(Myself,@3027)
+		Wait(4)
+		//ActionOverride(Player1,DisplayStringHead(Myself,@xxx))		
+		//ActionOverride(Player2,DisplayStringHead(Myself,@xxx))		
+		//ActionOverride(Player3,DisplayStringHead(Myself,@xxx))		
+		//ActionOverride(Player4,DisplayStringHead(Myself,@xxx))		
+		//ActionOverride(Player5,DisplayStringHead(Myself,@xxx))		
+		//ActionOverride(Player6,DisplayStringHead(Myself,@xxx))	
+		DisplayStringHead(Myself,@3029)	
+		Wait(3)	
+		DisplayStringHead(Myself,@3028)	
+		Wait(3)	
+		MoveToPointNoInterrupt([279.516])
+		DisplayStringHead(Myself,@3030)	
+		SetGlobal("JOJosterDownstair","GLOBAL",0)
+		SetGlobal("JOJosterThieves","GLOBAL",1)
+		Wait(3)
+		SetGlobal("JOJosVolShowOff","GLOBAL",1)  // Relaunch routine JOJosVol
+		SetGlobal("JOJosterShowOff","GLOBAL",1) // Relaunch Routine JOJoster
+		MoveBetweenAreas("AR0322",[833.220],S) // JOjoster Spot
+END
+
 
 
 /*

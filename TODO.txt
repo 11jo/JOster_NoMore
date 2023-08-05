@@ -1,0 +1,22 @@
+Prevent Biff downstair for joster
+
+Prevent Biff still here when goback to original area after joster
+
+Split all interjection in two at least
+
+Resolve dialog issue
+
+Choose append ids or ressource for teleport
+
+Varia interjection Biff use teleport spell for escape to point
+
+Prevent interupt for Biff downstair
+
+Prevent interupt for Wendy upstair
+
+
+
+
+Add an interjection for Brannel
+
+Add an action for Brannel
