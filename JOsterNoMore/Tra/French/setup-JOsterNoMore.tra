@@ -1,10 +1,14 @@
 // TP2
 
 
-@0 = ~Installer "JOsterNoMore"~
+@0 = ~Installer "JOsterNoMore" version complete~
 @1 = ~Ce mod necessite l'installation de BG2ToB / BGT ou BG2EE / EET~
 @2 = ~Une autre version de "JOsterNoMore" est deja installee~
+@3 = ~Installer uniquement la possibilite de payer plusieurs semaine d'avance~
+@4 = ~Installer uniquement la possibilite d'etre teleporte a la guilde le temps de payer Joster~
+@5 = ~Installer "JOsterNoMore" sans les interjections des nouveaux membres de la guilde~
 
+@6 = ~ "JOsterNoMore" ~
 
 // OTHER
 
@@ -119,6 +123,10 @@
 @3035 =  ~J'ARRIVE !~
 
 
+@3036 =  ~Je dois y aller !~
+@3037 =  ~Et hop !~
+
+
 // Voleuse de la Guilde de <CHARNAME>
 
 
@@ -162,6 +170,11 @@
 @4027 = ~Je dois vraiment tout faire dans cette guilde.~
 
 @4028 = ~Continue de faire le malin...~
+
+@4029 = ~Le travail n'attend pas...~
+@4030 = ~Crâneur.~
+
+
 
 @4900 = ~Taciturne ! Moi ?~
 

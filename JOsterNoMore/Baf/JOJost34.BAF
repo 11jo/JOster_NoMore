@@ -1,0 +1,76 @@
+// Start
+
+IF
+	AreaCheck("AR0322")
+	See([PC])
+	Global("JOJosterBiffIsHere","GLOBAL",1)
+THEN
+	RESPONSE #100
+		StartDialogue("JOJoster",[PC])
+END
+
+// Dead Biff
+
+IF
+	Dead("JOJosBIS")
+	See([PC])
+THEN
+	RESPONSE #100
+		SetGlobal("JOJosterBiffIsHere","GLOBAL",3)
+		DisplayStringHead(Myself,@6303)
+		ActionOverride("JOJosvol",DisplayStringHead(Myself,@6308))
+		ActionOverride("JOJosvol",EscapeArea())
+		EscapeArea()
+END
+
+
+// Travel
+
+// Original Biff
+
+IF
+	InMyArea([PC])
+	Global("JOJosterGoBackNow","GLOBAL",1) 
+THEN
+	RESPONSE #100
+		SetGlobal("JOJosterGoBackNow","GLOBAL",2)
+		Wait(2)
+		DisplayStringHead(Myself,@3001)
+		MoveToPointNoInterrupt([833.220])
+END
+
+
+// Not a idiot
+
+IF
+	CombatCounter(0)
+	Global("JOJosterAttack","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("JOJosterAttack","GLOBAL",0)
+		MoveToPointNoInterrupt([833.220])
+		FaceObject(Player1)
+		Continue()
+END
+
+IF
+	See(NearestEnemyOf(Player1))
+	!Global("JOJosterAttack","GLOBAL",1)
+THEN
+	RESPONSE #100
+		ApplySpell("JOJoster",CLERIC_REMOVE_FEAR)
+		DisplayStringHead(Myself,@6305)
+		Attack(NearestEnemyOf(Player1))
+		SetGlobal("JOJosterAttack","GLOBAL",1)
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		SetGlobal("JOJosterBiffIsHere","GLOBAL",3)
+		ApplySpell("JOJoster",CLERIC_REMOVE_FEAR)
+		DisplayStringHead(Myself,@6303)
+		EscapeArea()
+END

@@ -1,0 +1,132 @@
+// Light version
+
+////////////////////////// Bam
+
+ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+	INCLUDE ~JOsterNoMore/Lib/gw_convert_inventory_bam_to_ee.tpa~			// Loads function converting inventory BAMs to EE.
+	//OUTER_SPRINT file-exc ~PEIRBOW1 PEIRSL1H PEIRSL1S PEIRSL1B PEIRBOP1 PEIRMARO~	// Special cases: unused inventory or description icons, and ability .bam don't need to be converted.
+	ACTION_BASH_FOR ~JOsterNoMore/Bam/~ ~^.+\.bam$~ BEGIN
+		ACTION_TO_LOWER %BASH_FOR_FILE%
+		ACTION_TO_LOWER %BASH_FOR_RES%
+		ACTION_IF (~%file-exc%~ STRING_CONTAINS_REGEXP ~%BASH_FOR_RES%~ = 1) BEGIN
+			COPY ~%BASH_FOR_FILESPEC%~ ~override/%BASH_FOR_FILE%~
+				LPF ~gw_convert_inventory_bam_to_ee~ END
+			BUT_ONLY
+		END ELSE BEGIN
+			COPY ~%BASH_FOR_FILESPEC%~ ~override/%BASH_FOR_FILE%~
+		END
+	END
+END ELSE BEGIN
+	COPY ~JOsterNoMore/bam~ ~override~
+END
+
+
+////////////////////////// Creature
+
+
+	COPY ~JOsterNoMore/Cre/JOJOSTER.CRE~			~override/JOJOSTER.CRE~
+  SAY NAME1 @103
+  SAY NAME2 @103
+  WRITE_ASCII 0x248 ~JOJOST34~ (8) // Override script
+  WRITE_ASCII 0x280 ~JOJoster~ (8) // Script name / Death variable
+  WRITE_ASCII 0x2CC ~JOJOSTER~ (8) // Dialog name
+  WRITE_ASCII 0x260 ~PGUILD~ (8) // General script
+
+	COPY ~JOsterNoMore/Cre/JOJOSBIS.CRE~			~override/JOJOSBIS.CRE~
+  SAY NAME1 @103
+  SAY NAME2 @103
+  WRITE_ASCII 0x248 ~JOJosB34~ (8) // Override script
+  WRITE_ASCII 0x280 ~JOJosBIS~ (8) // Script name / Death variable
+  WRITE_ASCII 0x2CC ~JOJOSTER~ (8) // Dialog name
+  WRITE_ASCII 0x260 ~PGUILD~ (8) // General script
+
+
+	COPY ~JOsterNoMore/Cre/JOJOSVOL.CRE~			~override/JOJOSVOL.CRE~
+  SAY NAME1 @100
+  SAY NAME2 @100
+  WRITE_ASCII 0x248 ~JOJOSV34~ (8) // Override script
+  WRITE_ASCII 0x280 ~JOJosvol~ (8) // Script name / Death variable
+  WRITE_ASCII 0x2CC ~JOJOSVOL~ (8) // Dialog name
+  WRITE_ASCII 0x260 ~PGUILD~ (8) // General script
+  
+  
+////////////////////////// Item
+ 
+ 
+	COPY ~JOsterNoMore/Itm/JOJOSTER.ITM~			~override/JOJOSTER.ITM~
+  SAY NAME1 @101
+  SAY NAME2 @101 
+  SAY UNIDENTIFIED_DESC @104
+  SAY DESC @102 
+  WRITE_ASCII 0x3a ~JOJoster~ (8) // Bam name
+ 
+
+////////////////////////// Spell 
+
+
+// IWD Dimension Door
+
+  	COPY ~JOsterNoMore/Spl/SpDoor/JOWI402.SPL~			~override/JOWI402.SPL~
+  SAY NAME1 @10000
+  SAY NAME2 @10000 
+  SAY UNIDENTIFIED_DESC @10001
+  SAY DESC @10001 
+
+// BG1 Dimension Door
+
+ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+
+  	COPY ~JOsterNoMore/Spl/SpDoor/JOBG402.SPL~			~override/JOBG402.SPL~
+  SAY NAME1 @10002
+  SAY NAME2 @10002 
+  SAY UNIDENTIFIED_DESC @10003
+  SAY DESC @10003
+
+// Stolen from Nostalgia pack
+
+	COPY ~JOsterNoMore/Spl/DiDoor~							~override~
+  
+END  
+
+  
+////////////////////////// Effect  
+  
+  
+  	COPY ~JOsterNoMore/Eff/JOJOSTER.EFF~	~override/JOJOSTER.EFF~
+
+
+////////////////////////// Dlg
+
+
+	COMPILE EVALUATE_BUFFER ~JOsterNoMore/Dlg/JOJOSTER.D~	~override~
+	
+////////////////////////// Unused 	
+	//COMPILE EVALUATE_BUFFER ~JOsterNoMore/Dlg/JOJOSVol.D~	~override~
+////////////////////////// Unused 
+
+
+////////////////////////// Extand existing script
+  
+  
+	EXTEND_BOTTOM ~BALDUR.BCS~				~JOsterNoMore/Baf/JOBaldur.BAF~
+  
+	EXTEND_BOTTOM ~BALDUR25.BCS~				~JOsterNoMore/Baf/JOBaldur.BAF~
+	
+	EXTEND_BOTTOM ~AR0322.BCS~				~JOsterNoMore/Baf/JO340322.BAF~
+	
+	EXTEND_BOTTOM ~JOSTER.BCS~				~JOsterNoMore/Baf/Joster.BAF~
+
+////////////////////////// Unused 	
+	//EXTEND_BOTTOM ~PGUILD.BCS~				~JOsterNoMore/Baf/JOLathan.Jariel.BAF~
+////////////////////////// Unused 
+
+
+////////////////////////// Add new script
+
+
+	COMPILE ~JOsterNoMore/Baf/JOJost34.BAF~	~override~
+	
+	COMPILE ~JOsterNoMore/Baf/JOJOSV34.BAF~	~override~
+	
+	COMPILE ~JOsterNoMore/Baf/JOJosb34.BAF~	~override~
+	

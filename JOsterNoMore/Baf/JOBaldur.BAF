@@ -8,7 +8,7 @@ THEN
 		StorePartyLocations()
 		FadeToColor([30.0],0)
 		Wait(2)	
-		ReallyForceSpellRES("SPPR011",Player1)
+		ReallyForceSpellRES("JOBG402",Player1)
 		FadeFromColor([30.0],0)
 		SmallWait(1)	
 		MoveToCenterOfScreen(90)
@@ -17,7 +17,7 @@ THEN
 		//ActionOverride("JOJoster",ApplySpell(Player1,"NOSTALGIA_DOOR"))
 		Wait(2)
 		MoveViewObject(Player1,INSTANT) // TEST
-		ActionOverride(Player1,ReallyForceSpellRES("SPPR011",Player1))
+		ActionOverride(Player1,ReallyForceSpellRES("JOBG402",Player1))
 		//ActionOverride(Player1,ApplySpell(Player1,"NOSTALGIA_DOOR"))
 		Wait(1)	
 		ActionOverride(Player1,FaceObject("Joster"))
@@ -32,8 +32,8 @@ IF
 THEN
 	RESPONSE #100
 		ClearAllActions()
-		Wait(2)
-		ActionOverride(Player1,ReallyForceSpellRES("SPPR011",Player1))
+		Wait(5)
+		ActionOverride(Player1,ReallyForceSpellRES("JOBG402",Player1))
 		//ActionOverride(Player1,ApplySpell(Player1,"NOSTALGIA_DOOR"))
 		Wait(3)
 		FadeToColor([30.0],0)
@@ -46,7 +46,7 @@ THEN
 		FadeFromColor([30.0],0)
 		SetGlobal("JOJosterGoBackNow","GLOBAL",0)
 		SetGlobal("JOJosterGetPaid","GLOBAL",0)	
-		ActionOverride(Player1,ReallyForceSpellRES("SPPR011",Player1))
+		ActionOverride(Player1,ReallyForceSpellRES("JOBG402",Player1))
 		Continue()
 END
 

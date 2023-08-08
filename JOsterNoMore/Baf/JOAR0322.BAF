@@ -34,6 +34,33 @@ THEN
 		Continue()
 END
 
+
+// Prevent some
+
+IF
+	Global("PGThievesLeave","GLOBAL",0)
+	!Global("JOJosterThieves","GLOBAL",0)
+	GlobalGT("JOJosterGetPaid","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("JOJosterThieves","GLOBAL",0)
+		ClearActions("JOJoster")
+		ClearActions("JOJosVol")
+		ActionOverride("JOJoster",DisplayStringHead(Myself,@3036))
+		Wait(2)	
+		ActionOverride("JOJoster",ReallyForceSpell(Myself,DRYAD_TELEPORT))
+		CreateCreatureDoor("JOJoster",[833.220],S)
+		ActionOverride("JOJosvol",DisplayStringHead(Myself,@4029))
+		ActionOverride("JOJosvol",EquipMostDamagingMelee())
+		ActionOverride("JOJosvol",MoveToPointNoInterrupt([710.185]))
+		ActionOverride("Morsa",MoveToPointNoInterrupt([1049.346]))
+		Wait(2)	
+		ActionOverride("JOJoster",DisplayStringHead(Myself,@3037))
+		Wait(2)	
+		ActionOverride("JOJosvol",DisplayStringHead(Myself,@4030))
+END
+	
+
 /*
 // Relaunch
 

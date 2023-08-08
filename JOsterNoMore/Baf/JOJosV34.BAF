@@ -1,0 +1,11 @@
+// Bye
+
+IF
+	Global("JOJosterBiffIsHere","GLOBAL",2)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@4029)
+		Wait(3)
+		DisplayStringHead(Myself,@3036)
+		EscapeArea()
+END

@@ -1,0 +1,89 @@
+/*
+IF
+	GlobalTimerExpired("PGThievesReturn","GLOBAL")
+	Global("NotifyThiefHead","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("NotifyThiefHead","GLOBAL",1)
+		DisplayStringHead(Player1,62083)  // Vos voleurs sont revenus de leurs missions.
+END
+*/
+
+IF
+	GlobalTimerExpired("JosterReturn","GLOBAL")
+	Global("JoJOsterDelay","GLOBAL",5)
+	Global("JosterLeave","GLOBAL",1)
+	!Global("Chapter","GLOBAL",4)
+	!Global("Chapter","GLOBAL",5)
+	!Global("Chapter","GLOBAL",7)
+THEN
+	RESPONSE #100
+		SetGlobal("JosterLeave","GLOBAL",2)
+		SetGlobal("JoJOsterDelay","GLOBAL",0)
+		SetGlobalTimer("JosterReturn","GLOBAL",FIFTY_DAYS)
+		SetGlobalTimer("JosterPaid","GLOBAL",FIVE_DAYS)
+		DisplayStringHead(Player1,62081)  // Le quartier-maître vous attend pour prendre le dû de Renal.
+END
+
+IF
+	GlobalTimerExpired("JosterReturn","GLOBAL")
+	Global("JoJOsterDelay","GLOBAL",3)
+	Global("JosterLeave","GLOBAL",1)
+	!Global("Chapter","GLOBAL",4)
+	!Global("Chapter","GLOBAL",5)
+	!Global("Chapter","GLOBAL",7)
+THEN
+	RESPONSE #100
+		SetGlobal("JosterLeave","GLOBAL",2)
+		SetGlobal("JoJOsterDelay","GLOBAL",0)
+		SetGlobalTimer("JosterReturn","GLOBAL",THIRTY_DAYS)
+		SetGlobalTimer("JosterPaid","GLOBAL",FIVE_DAYS)
+		DisplayStringHead(Player1,62081)  // Le quartier-maître vous attend pour prendre le dû de Renal.
+END
+
+IF
+	GlobalTimerExpired("JosterReturn","GLOBAL")
+	Global("JoJOsterDelay","GLOBAL",2)
+	Global("JosterLeave","GLOBAL",1)
+	!Global("Chapter","GLOBAL",4)
+	!Global("Chapter","GLOBAL",5)
+	!Global("Chapter","GLOBAL",7)
+THEN
+	RESPONSE #100
+		SetGlobal("JosterLeave","GLOBAL",2)
+		SetGlobal("JoJOsterDelay","GLOBAL",0)
+		SetGlobalTimer("JosterReturn","GLOBAL",TWENTY_DAYS)
+		SetGlobalTimer("JosterPaid","GLOBAL",FIVE_DAYS)
+		DisplayStringHead(Player1,62081)  // Le quartier-maître vous attend pour prendre le dû de Renal.
+END
+
+IF
+	GlobalTimerExpired("JosterReturn","GLOBAL")
+	Global("JoJOsterDelay","GLOBAL",1)
+	Global("JosterLeave","GLOBAL",1)
+	!Global("Chapter","GLOBAL",4)
+	!Global("Chapter","GLOBAL",5)
+	!Global("Chapter","GLOBAL",7)
+THEN
+	RESPONSE #100
+		SetGlobal("JosterLeave","GLOBAL",2)
+		SetGlobal("JoJOsterDelay","GLOBAL",0)
+		SetGlobalTimer("JosterReturn","GLOBAL",TEN_DAYS)
+		SetGlobalTimer("JosterPaid","GLOBAL",FIVE_DAYS)
+		DisplayStringHead(Player1,62081)  // Le quartier-maître vous attend pour prendre le dû de Renal.
+END
+
+/*
+IF
+	GlobalTimerExpired("JosterPaid","GLOBAL")
+	!Global("JosterLeave","GLOBAL",1)
+	Global("PGFailed","GLOBAL",0)
+	!Global("Chapter","GLOBAL",4)
+	!Global("Chapter","GLOBAL",5)
+	!Global("Chapter","GLOBAL",7)
+THEN
+	RESPONSE #100
+		SetGlobal("PGFailed","GLOBAL",1)
+		DisplayStringHead(Player1,62082)  // Renal ne veut plus attendre... Il vous retire votre guilde.
+END
+*/

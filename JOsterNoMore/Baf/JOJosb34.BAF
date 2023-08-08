@@ -1,0 +1,92 @@
+// Dead Biff
+
+IF
+	OR(3)
+		Dead("JOJoster")
+		Dead("JOJosBIS")
+THEN
+	RESPONSE #100
+		ApplySpell(Myself,WIZARD_BLUR)
+		DisplayStringHead(Myself,@6307)
+		Wait(4)
+		ApplySpell(Myself,CLERIC_SUNRAY)
+		Wait(3)
+		DestroySelf()
+		ActionOverride(Player1,ApplySpell(Myself,WIZARD_ENERGY_DRAIN)
+		ActionOverride(Player1,ApplySpell(Myself,SAREVOK_STRIKE))
+		DisplayStringHead(Player1,@6306)
+END
+
+// One Biff
+
+IF
+	Global("JOJosterBiffIsHere","GLOBAL",3)
+THEN
+	RESPONSE #100
+		ApplySpell(Myself,WIZARD_BLUR)
+		DisplayStringHead(Myself,@6309)
+		Wait(4)
+		ApplySpell(Myself,CLERIC_SUNRAY)
+		Wait(3)
+		DestroySelf()
+		ActionOverride(Player1,ApplySpell(Myself,WIZARD_BIGBYS_CLENCHED_FIST))
+		DisplayStringHead(Player1,@6310)
+END
+
+IF
+	AreaCheck("AR0322")  // (Q)  Guilde de Charname, L1
+	InMyArea("JOJoster")  // Biff, le voleur de l'ombre
+	!Dead("JOJoster")
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		ScreenShake([5.5],5)
+		ActionOverride("JOJoster",DisplayStringHead(Myself,@3020))  // Non ! NON ! Non mais ça va pas la tête ?
+		DisplayStringHead(Myself,@3020)  // Non ! NON ! Non mais ça va pas la tête ?
+		Wait(2)	
+		ApplySpell(Myself,VIEKANG_LIGHTNING)
+		ActionOverride("JOJoster",ApplySpell(Myself,VIEKANG_LIGHTNING))
+		ScreenShake([5.5],5)
+		Continue()
+END
+		
+
+// Travel
+
+IF
+	!AreaCheck("AR0322")
+	See([PC])
+	!Global("JosterLeave","GLOBAL",0)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		Wait(1)	
+		DisplayStringHead(Myself,@3002)  // Avant l'heure, c'est pas l'heure...
+		FaceObject(Player1(Myself))
+		ReallyForceSpellRES("DRYAD_TELEPORT",Myself)
+		//ReallyForceSpell(Myself,NOSTALGIA_DOOR)
+		Wait(1)	
+		DisplayStringHead(Myself,@3001)  // À bientôt patron !
+		Wait(2)	
+		DestroySelf()
+END
+
+IF
+	!AreaCheck("AR0322")
+	See([PC])
+	Global("JOJosterGetPaid","GLOBAL",0)
+	Global("JosterLeave","GLOBAL",0)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		DisplayStringHead(Myself,@3003)  // Me voila 
+		FaceObject(Player1(Myself))
+		Wait(2)
+		DisplayStringHead(Myself,@3000)  // En avant <CHARNAME>... Heu, Chef !
+		Wait(3)
+		//ReallyForceSpell(Myself,NOSTALGIA_DOOR)
+		//ReallyForceSpell(Player1,NOSTALGIA_DOOR)	
+		ActionOverride(Player1,ReallyForceSpellRES("JOBG402",Player1))
+		SetGlobal("JOJosterGetPaid","GLOBAL",1)
+		ReallyForceSpell(Myself,DRYAD_TELEPORT)
+END
