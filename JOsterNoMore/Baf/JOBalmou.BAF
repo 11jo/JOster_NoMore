@@ -13,6 +13,7 @@ IF
 	GlobalTimerExpired("JosterReturn","GLOBAL")
 	Global("JoJOsterDelay","GLOBAL",5)
 	Global("JosterLeave","GLOBAL",1)
+	!AreaType(POFAREA)
 	!AreaType(BG1AREA)
 	!Global("Chapter","GLOBAL",16)
 	!Global("Chapter","GLOBAL",17)
@@ -21,7 +22,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("JosterLeave","GLOBAL",10)
 		SetGlobal("JoJOsterDelay","GLOBAL",0)
-		SetGlobalTimer("JosterReturn","GLOBAL",FIFTY_DAYS)
+		SetGlobalTimer("JosterReturn","GLOBAL",SIX_DAYS)
 		SetGlobalTimer("JosterPaid","GLOBAL",FIVE_DAYS)
 		DisplayStringHead(Player1,62081)  // Le quartier-maître vous attend pour prendre le dû de Renal.
 END
@@ -30,6 +31,7 @@ IF
 	GlobalTimerExpired("JosterReturn","GLOBAL")
 	Global("JoJOsterDelay","GLOBAL",3)
 	Global("JosterLeave","GLOBAL",1)
+	!AreaType(POFAREA)
 	!AreaType(BG1AREA)
 	!Global("Chapter","GLOBAL",16)
 	!Global("Chapter","GLOBAL",17)
@@ -38,7 +40,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("JosterLeave","GLOBAL",2)
 		SetGlobal("JoJOsterDelay","GLOBAL",0)
-		SetGlobalTimer("JosterReturn","GLOBAL",THIRTY_DAYS)
+		SetGlobalTimer("JosterReturn","GLOBAL",SIX_DAYS)
 		SetGlobalTimer("JosterPaid","GLOBAL",FIVE_DAYS)
 		DisplayStringHead(Player1,62081)  // Le quartier-maître vous attend pour prendre le dû de Renal.
 END
@@ -47,6 +49,7 @@ IF
 	GlobalTimerExpired("JosterReturn","GLOBAL")
 	Global("JoJOsterDelay","GLOBAL",2)
 	Global("JosterLeave","GLOBAL",1)
+	!AreaType(POFAREA)
 	!AreaType(BG1AREA)
 	!Global("Chapter","GLOBAL",16)
 	!Global("Chapter","GLOBAL",17)
@@ -55,7 +58,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("JosterLeave","GLOBAL",2)
 		SetGlobal("JoJOsterDelay","GLOBAL",0)
-		SetGlobalTimer("JosterReturn","GLOBAL",TWENTY_DAYS)
+		SetGlobalTimer("JosterReturn","GLOBAL",SIX_DAYS)
 		SetGlobalTimer("JosterPaid","GLOBAL",FIVE_DAYS)
 		DisplayStringHead(Player1,62081)  // Le quartier-maître vous attend pour prendre le dû de Renal.
 END
@@ -64,6 +67,7 @@ IF
 	GlobalTimerExpired("JosterReturn","GLOBAL")
 	Global("JoJOsterDelay","GLOBAL",1)
 	Global("JosterLeave","GLOBAL",1)
+	!AreaType(POFAREA)
 	!AreaType(BG1AREA)
 	!Global("Chapter","GLOBAL",16)
 	!Global("Chapter","GLOBAL",17)
@@ -72,7 +76,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("JosterLeave","GLOBAL",2)
 		SetGlobal("JoJOsterDelay","GLOBAL",0)
-		SetGlobalTimer("JosterReturn","GLOBAL",TEN_DAYS)
+		SetGlobalTimer("JosterReturn","GLOBAL",SIX_DAYS)
 		SetGlobalTimer("JosterPaid","GLOBAL",FIVE_DAYS)
 		DisplayStringHead(Player1,62081)  // Le quartier-maître vous attend pour prendre le dû de Renal.
 END

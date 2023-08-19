@@ -4,7 +4,7 @@
 @0 = ~Installer "JOsterNoMore" version complete~
 @1 = ~Ce mod necessite l'installation de BG2ToB / BGT ou BG2EE / EET~
 @2 = ~Une autre version de "JOsterNoMore" est deja installee~
-@3 = ~Installer uniquement la possibilite de payer plusieurs semaine d'avance~
+@3 = ~Installer uniquement la possibilite de payer plusieurs semaines d'avance~
 @4 = ~Installer uniquement la possibilite d'etre teleporte a la guilde le temps de payer Joster~
 @5 = ~Installer "JOsterNoMore" sans les interjections des nouveaux membres de la guilde~
 
@@ -293,6 +293,32 @@
 
 
 @7042 = ~Faites attention à vous !~ // Biff
+
+
+// Delay tribut
+
+
+@9000 = ~Évidemment...~ // Charname
+@9001 = ~J'ai une requête au sujet du tribut.~ // Charname
+@9002 = ~Y-a-t-il un problème ?~ // Joster
+@9003 = ~Je souhaiterais payer mon tribu pour les cinquante prochains jours~ // Charname
+@9004 = ~Je souhaiterais payer mon tribu pour les trente prochains jours~ // Charname
+@9005 = ~Je souhaiterais payer mon tribu pour les vingt prochains jours~ // Charname
+@9006 = ~Je souhaiterais payer mon tribu pour les dix prochains jours~ // Charname
+@9007 = ~Non, tout va bien continue.~ // Charname
+@9008 = ~C'est toi le patron, mais sache que pendant ton absence et sans ta supervision tes voleurs n'engrangerons plus d'argent après cinq jours. Quoi qu'il en soit, c'est un plaisir de faire affaire avec toi. Renal sera très satisfait de tes services. Je te souhaite un bon voyage !~ ~C'est toi la patronne, mais sache que pendant ton absence et sans ta supervision tes voleurs n'engrangerons plus d'argent après cinq jours. Quoi qu'il en soit, c'est un plaisir de faire affaire avec toi. Renal sera très satisfait de tes services. Je te souhaite un bon voyage !~ // Joster
+@9009 = ~Quartier général de la guilde des voleurs : paiement des factures !
+
+J'ai payé le montant que je devais au questeur pour les 50 prochains jours. Renal sera satisfait de mon tribut.~ // Journal entrie
+@9010 = ~Quartier général de la guilde des voleurs : paiement des factures !
+
+J'ai payé le montant que je devais au questeur pour les 30 prochains jours. Renal sera satisfait de mon tribut.~ // Journal entrie
+@9011 = ~Quartier général de la guilde des voleurs : paiement des factures !
+
+J'ai payé le montant que je devais au questeur pour les 20 prochains jours. Renal sera satisfait de mon tribut.~ // Journal entrie
+@9012 = ~Quartier général de la guilde des voleurs : paiement des factures !
+
+J'ai payé le montant que je devais au questeur pour les 10 prochains jours. Renal sera satisfait de mon tribut.~ // Journal entrie
 
 
 // Spell 

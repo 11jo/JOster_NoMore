@@ -50,6 +50,10 @@ LANGUAGE ~English~
 
 ////////////////////////// Start JOsterNoMore //////////////////////////
 
+/////                       \\\\\
+/////      Component 1      \\\\\
+/////                       \\\\\
+
 
 BEGIN @0 /*Installer "JOsterNoMore" version complete*/
 DESIGNATED 0 SUBCOMPONENT @6
@@ -112,8 +116,12 @@ END ELSE  BEGIN
 	
 END 
 
+/////                       \\\\\
+/////      Component 2      \\\\\
+/////                       \\\\\
 
-BEGIN @3 /*Installer uniquement la possibilite de payer plusieurs semaine d'avance*/
+
+BEGIN @3 /*Installer uniquement la possibilité de payer plusieurs semaines d'avance*/
 DESIGNATED 3 SUBCOMPONENT @6
 LABEL ~JOJosterDelay-11jo~
 REQUIRE_PREDICATE GAME_IS ~bg2 bgt bg2ee eet~ @1
@@ -171,6 +179,10 @@ END ELSE  BEGIN
 	
 END 
 
+/////                       \\\\\
+/////      Component 3      \\\\\
+/////                       \\\\\
+
 
 BEGIN @4 /*Installer uniquement la possibilite d'etre teleporte a la guilde le temps de payer Joster*/
 DESIGNATED 4 SUBCOMPONENT @6
@@ -181,6 +193,10 @@ FORBID_COMPONENT ~Setup-JOsterNoMore~ ~4~ @2
 FORBID_COMPONENT ~Setup-JOsterNoMore~ ~5~ @2
 	
 	INCLUDE ~JOsterNoMore/Lib/JOJosterObole.tph~
+
+/////                       \\\\\
+/////      Component 4      \\\\\
+/////                       \\\\\
 
 
 BEGIN @5 /*Installer "JOsterNoMore" sans les interjections des nouveaux membres de la guilde*/

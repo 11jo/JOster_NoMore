@@ -1,27 +1,32 @@
 // TP2
 
 
-@0 = ~Installer "JOsterNoMore"~
-@1 = ~Ce mod necessite l'installation de BG2ToB / BGT ou BG2EE / EET~
-@2 = ~Une autre version de "JOsterNoMore" est deja installee~
+@0 = ~Install "JOsterNoMore" full~
+@1 = ~BG2ToB / BGT ou BG2EE / EET is required~
+@2 = ~Another version of "JOsterNoMore" is already installed~
+@3 = ~Install only the possibility of paying several weeks in advance~
+@4 = ~Install only the possibility of being teleported to the guild for the time required to pay Joster.~
+@5 = ~Install "JOsterNoMore" without the interjections of new guild members~
 
+@6 = ~ "JOsterNoMore" ~
 
 // OTHER
 
 
-@100 = ~Voleuse de la Guilde de <CHARNAME>~
-@101 = ~Obole des voleurs de l'ombre~
-@102 = ~Ce bol semble contenir une infinité de pièces mais vous ne pouvez en saisir qu'une seule à la fois. L'obole disparaît aussitôt permettant aux membres des voleurs de l'ombre de régler leurs comptes... malgré de longues distances ou des préoccupations plus pressantes.~
-@103 = ~Biff, le voleur de l'ombre~
-@104 = ~Ce récipient dégage une aura particulière, bien que vous n'ayez pas encore réussi à discerner sont contenu, vous pouvez dors et déjà vous en saisir... Mais pour quoi faire ?~
+@100 = ~<CHARNAME>'s Guild thief~
+@101 = ~Obole of the Shadow Thieves~
+@102 = ~This receptacle  seems to contain an infinite number of coins, but you can only grab one at a time. The obole vanishes instantly, allowing members of the Shadow Thieves to settle accounts... despite long distances or more pressing preoccupations.~
+@103 = ~Biff, the Shadow thief~
+@104 = ~This recipient has a particular aura, and although you haven't yet managed to discern what's inside, you can already take hold of it... But what for?~
 
 // Start
 
-@900 = ~Mesdames et Messieurs, bien le bonjour...~
-@901 = ~... Préparez-vous à accueillir le grand... que dis-je, le magnifique...~
-@902 = ~...celui qui ravira vos cœur et vous cassera les oreilles...~
-@903 = ~...Vous allez adorer le détester... Biff, l'Inc.. royable voleur de l'ombre !~
-@904 = ~Merci ! Merci ! *Hé, tu as trop improvisé sur la fin...*~
+@900 = ~Good afternoon, ladies and gentlemen...~
+@901 = ~... Prepare yourselves to welcome the great... shall I say, the magnificent...~
+@902 = ~...the one who will ravish your hearts and break your patience...~
+@903 = ~...Vous allez adorer le détester... Biff, l'Und.. Outstanding Shadow thief !~
+@904 = ~THANKS ! THANKS !~
+@905 = ~*Hey, you overdid it at the end...*~
 
 
 
@@ -68,20 +73,20 @@
 @2000 = ~Bon retour à la guilde patron~ ~Bon retour à la guilde patronne~
 
 
+@2999 = ~Dans la famille ont fait toujours de notre mieux. Mon cousin par exemple il est toujours là quand on en a besoin !~
 @3000 = ~En avant <CHARNAME>... Heu, Chef !~ ~En avant <CHARNAME>... Heu, Cheffe !~
 @3001 = ~À bientôt patron !~ ~A bientôt patronne !~
 @3002 = ~Avant l'heure, c'est pas l'heure...~
 @3003 = ~Me voila !~
 
 @3004 = ~Hou Hou ! Je suis là Patron.~ ~Hou Hou ! Je suis là Patronne.~
-@3008 = ~Dans la famille ont fait toujours de notre mieux. Mon cousin par exemple il est toujours là quand on en a besoin !~
 @3005 = ~<CHARNAME> ! Ravi de te revoir... Patron.~ ~<CHARNAME> ! Ravi de te revoir... Patronne.~
 @3006 = ~Chef ! Tu veux profiter de la cheminé ?~ ~Cheffe ! Tu veux profiter de la cheminé ?~
 @3007 = ~C'est un plaisir de bosser pour un <PRO_RACE> dans votre genre.~
-@3008 = ~Mon cousin Biff, c'est un sacré numéro. Mais il assure grave dans toute les situations.~
+@3008 = ~Mon cousin Biff, c'est un sacré numéro. Mais il assure grave dans toutes les situations.~
 @3009 = ~Alors Wendy, ça fait quoi d'être une mystérieuse voleuse de l'ombre ?~
 @3010 = ~Oups ! Mystérieuse et anonyme !~
-@3011 = ~Elle est bien plus sympa quelle en a l'air.~
+@3011 = ~Elle est bien plus sympa qu'elle en a l'air.~
 @3012 = ~J'ai fait un transport pour lui, il n'y a pas si longtemps, il présente bien ça c'est sûr.~
 @3013 = ~Ha ! ha ! Ha ! Tu as raison.~
 @3014 = ~Elle a pas sa langue dans la poche.~
@@ -90,14 +95,36 @@
 
 @3017 = ~Libérez les voleurs ! libérez les voleurs !~
 
-@3018 = ~Rattell ! J'ai besoin d'un jus d'orange.~
+@3018 = ~Rattell ! J'ai besoin d'un jus de navet.~
 @3019 = ~Hé ! Hé !~
 
 
-@3020 = ~Non ! NON ! Non mais ça va pas la tête ?~
-@3021 = ~Patron ! le sortilège qui me lie à l'obole ne doit surtout pas être utilisé en ma présence... J'aurais pu y laisser ma peau !~ ~Patronne ! le sortilège qui me lie à l'obole ne doit surtout pas être utilisé en ma présence... J'aurais pu y laisser ma peau !~
+@3020 = ~No ! NO ! Are you out of your mind ?~
+@3021 = ~Boss! The spell that ties me to the obole can never be used when I'm around... I could have been crushed to death!~
 @3022 = ~Il y a bien assez de Biff dans les parages.~
 @3023 = ~Ouf... C'est sûr qu'un seul nous cause déjà bien des soucis.~ // Voleuse
+
+
+@3024 = ~Notre mystérieuse amie est au première étage... Pour de mystérieuses raisons~
+
+@3025 = ~Je vais préparer les sortilèges nécessaires au fonctionnement de l'Obole, si quelqu'un me cherche je serais au sous-sol.~
+@3026 = ~Et non, je ne vais pas faire une sieste !~
+
+@3027 = ~Salut.~
+@3028 = ~Cela va sûrement te surprendre, mais j'ai besoin de calme par moment... Et la magie nécessite une grande concentration~
+@3029 = ~Non, je ne ne suis pas en train de faire une sieste !~
+@3030 = ~Je retourne à l'étage, les autres doivent s'ennuyer sans moi.~
+
+@3031 = ~Où vas-tu comme ça ? Tu es bien silencieux.~ // Voleuse
+
+@3032 = ~On a besoin de moi ?~
+@3033 = ~On a toujours besoin de toi...~
+@3034 = ~Alors...~
+@3035 =  ~J'ARRIVE !~
+
+
+@3036 =  ~Je dois y aller !~
+@3037 =  ~Et hop !~
 
 
 // Voleuse de la Guilde de <CHARNAME>
@@ -128,15 +155,40 @@
 @4017 = ~Rattell ! J'ai besoin d'une bière.~
 @4018 = ~Raaah.~
 
+@4019 = ~Hilarant ! Figure toi que certain membre de la guilde on un vrai travail.~
+@4020 = ~Alors, on part en vacances ?~ // Biff
+
+
+@4021 = ~Je bosse ça ne peut pas attendre ?~ // Biff
+@4022 = ~Ou alors, Biff est trop insupportable ?~ // Biff
+@4023 = ~Tu sais bien que j'ai un faible pour cet idiot.~ // Biff
+
+
+@4024 = ~Tu as besoin de quelque chose ?~
+@4025 = ~Les autres sont perdus sans toi !~ // Charname
+@4026 = ~Hum !~
+@4027 = ~Je dois vraiment tout faire dans cette guilde.~
+
+@4028 = ~Continue de faire le malin...~
+
+@4029 = ~Work is never done...~
+@4030 = ~Crâneur.~
+
+
+
+@4900 = ~Taciturne ! Moi ?~
+
+@4901 = ~Biff est au sous-sol, à faire Mask sait quoi...~
 
 @5000 = ~Cet idiot a vendu la mèche...~
+
 
 // Fireplace
 
 @5001 = ~Pas maintenant !~ // Charname
 @5002 = ~Bouuuuh !~ // Biff
 @5003 = ~Allons ! Allons ! Ce sera pour la prochaine fois.~ // Charname
-@5004 = ~Quel gamin.~ // Voleuse
+@5004 = ~Quel enfant tu fais.~ // Voleuse
 
 
 // Jariel (SHTHLT01), Rattell (SHTHSTOR) et Lathan (SHTHLT02)
@@ -179,21 +231,94 @@
 @6300 = ~Ce n'est pas possible, je ne peux plus continuer.~ // Voleuse
 @6301 = ~Je n'arrive pas à y croire... Je n'ai plus rien à faire ici !~ // Biff
 @6302 = ~Faut pas croire que je vais me laisser assasiner comme ça !~ // Voleuse
-@6303 = ~<CHARNAME> ! Tu n'en vaux pas la peine...~ // Biff
+@6303 = ~<CHARNAME> ! You're not worth it...~ // Biff
 
 
-@6304 = ~Tu vas voir le sort que je réserve à ceux qui s'en prennent à <CHARNAME> !~ // Voleuse
-@6305 = ~À l'attaque ! Pour le Patron !~ ~À l'attaque ! Pour la Patronne !~ // Biff
+@6304 = ~You'll see the fate I reserve for those who attack <CHARNAME> !~ // Voleuse
+@6305 = ~Let's fight ! For the Boss !~ // Biff
 
-@6306 = ~(Vous êtes foudroyé par une décharge magique.)~ ~(Vous êtes foudroyée par une décharge magique.)~ // Narrateur
-@6307 = ~Biff n'est plus de ce monde !~ // Narrateur
+@6306 = ~(You are smitten by a magical discharge.)~ // Narrateur
+@6307 = ~Biff is no more !~ // Narrateur
 
 
 @6308 = ~Biff attends ! Adieu <CHARNAME> on ne peut pas te faire confiance.~ // Voleuse
 
-@6309 = ~L'obole est désactivée... Vous auriez du avoir plus de respect pour vos alliés.~ // Narrateur
-@6310 = ~(Une décharge magique s'abat sur votre tête.)~ // Narrateur
+@6309 = ~The obole is inactive... You should have more respect for your allies.~ // Narrateur
+@6310 = ~(A magical surge falls on your head.)~ // Narrateur
 
+// Thieves are here
+
+@7000 = ~Salut toi ! Besoin de te défouler ?~ // Voleuse
+@7001 = ~On pourrait croire que menacer les gens et leurs flanquer des raclées est un bon moyen pour ça... Mais non !~ // Varia
+@7002 = ~Que proposes-tu ?~ // Varia
+@7003 = ~Pour commencer, regardons notre Biff local faire son numéro.~ // Voleuse
+@7004 = ~Alors les garçons, la pêche aux benêts a été bonne ?~ // Voleuse
+@7005 = ~M'en parle pas, se suis éreinté.~ // Goshan
+@7006 = ~Avoir une équipe de bras cassés à gérer c'est le pire...~ // Kretor
+@7007 = ~On part en virée Morsa ?~ // Voleuse
+@7008 = ~Avec plaisir ! Rester a ne rien faire et attendre au coin du feu n'est pas mon fort.~ // Morsa
+@7009 = ~Bonne chasse ! Le butin avant tout !~ // Voleuse
+@7010 = ~La forme ?~ // Biff
+@7011 = ~Toujours ! Mais je me rincerais bien le gosier...~ // Hanz
+@7012 = ~Rattell ! Tout le monde a besoin d'une bière !~ // Biff
+@7013 = ~Et une tournée, une !~ // Rattell
+@7014 = ~Youhou !~ // Hanz
+@7015 = ~Enfin !~ // Goshan
+@7016 = ~Ouf !~ // Kretor
+@7017 = ~Copain !~ // Morsa
+@7018 = ~Lèche-Bottes !~ // Varia
+@7019 = ~Et pan !~ // Voleuse
+@7020 = ~Tu m’emmènes faire un tour de bateau ?~ // Biff
+@7021 = ~Évidemment, mais il faudra attendre que Charname se décide sur les quotas.~ // Morsa
+@7022 = ~J'ai hâte !~ // Biff
+@7023 = ~Alors on est de mauvaise humeur aujourd'hui ?~ // Biff
+@7024 = ~Je vais te casser les deux jambes et on verra si tu continue à sourire...~ // Varia
+@7025 = ~Allons ! Allons ! Racontes moi plutôt ce qui ne va pas.~ // Biff
+@7026 = ~Si tu veux on échange nos places et on verra si tu continue à sourire après avoir passé la journée à casser les deux jambes de tes « clients ».~ // Varia
+@7027 = ~Varia ma chère, tu radotes !~ // Biff
+@7028 = ~Finalement c'est ta langue que je vais couper ! Imbécile !~ // Varia
+@7029 = ~Hé hé !~ // Biff
+@7030 = ~Crétin !~ // Varia
+@7031 = ~Ho ho !~ // Biff
+@7032 = ~Demeuré !~ // Varia
+@7033 = ~Varia, pardon ! C'était pour rire...~ // Biff
+@7034 = ~Enflure !~ // Varia
+@7035 = ~On fait la paix ?~ // Biff
+@7036 = ~Bien sûr !~ // Varia
+@7037 = ~Aie !~ // Biff
+@7038 = ~Bien Fait !~ // Varia
+@7039 = ~Mais euh !~ // Biff
+@7040 = ~Bien dit !~ // Voleuse
+@7041 = ~Pourquoi tant de haine !~ // Biff
+
+
+@7042 = ~Faites attention à vous !~ // Biff
+
+
+// Delay tribut
+
+
+@9000 = ~Obviously...~ // Charname
+@9001 = ~I have a request regarding the fee.~ // Charname
+@9002 = ~Is something wrong?~ // Joster
+@9003 = ~I'd like to pay my tribute for the next fifty days~ // Charname
+@9004 = ~I'd like to pay my tribute for the next thirty days~ // Charname
+@9005 = ~I'd like to pay my tribute for the next twenty days~ // Charname
+@9006 = ~I'd like to pay my tribute for the next ten days~ // Charname
+@9007 = ~No, everything's fine, just carry on.~ // Charname
+@9008 = ~C'est toi le patron, mais sache que pendant ton absence et sans ta supervision tes voleurs n'engrangerons plus d'argent après cinq jours. Quoi qu'il en soit, c'est un plaisir de faire affaire avec toi. Renal sera très satisfait de tes services. Je te souhaite un bon voyage !~ ~C'est toi la patronne, mais sache que pendant ton absence et sans ta supervision tes voleurs n'engrangerons plus d'argent après cinq jours. Quoi qu'il en soit, c'est un plaisir de faire affaire avec toi. Renal sera très satisfait de tes services. Je te souhaite un bon voyage !~ // Joster
+@9009 = ~Quartier général de la guilde des voleurs : paiement des factures !
+
+J'ai payé le montant que je devais au questeur pour les 50 prochains jours. Renal sera satisfait de mon tribut.~ // Journal entrie
+@9010 = ~Quartier général de la guilde des voleurs : paiement des factures !
+
+J'ai payé le montant que je devais au questeur pour les 30 prochains jours. Renal sera satisfait de mon tribut.~ // Journal entrie
+@9011 = ~Quartier général de la guilde des voleurs : paiement des factures !
+
+J'ai payé le montant que je devais au questeur pour les 20 prochains jours. Renal sera satisfait de mon tribut.~ // Journal entrie
+@9012 = ~Quartier général de la guilde des voleurs : paiement des factures !
+
+J'ai payé le montant que je devais au questeur pour les 10 prochains jours. Renal sera satisfait de mon tribut.~ // Journal entrie
 
 
 // Spell 

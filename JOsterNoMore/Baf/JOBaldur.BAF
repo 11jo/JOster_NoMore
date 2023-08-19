@@ -10,13 +10,13 @@ THEN
 		Wait(2)	
 		ReallyForceSpellRES("JOBG402",Player1)
 		FadeFromColor([30.0],0)
-		SmallWait(1)	
-		MoveToCenterOfScreen(90)
+		SmallWait(1)
 		ActionOverride(Player1,LeaveAreaLUA("AR0322","",[578.365],50))
 		//ReallyForceSpellRES("SPPR011",Player1)
 		//ActionOverride("JOJoster",ApplySpell(Player1,"NOSTALGIA_DOOR"))
 		Wait(2)
 		MoveViewObject(Player1,INSTANT) // TEST
+		MoveViewPoint([578.365],INSTANT) // TEST
 		ActionOverride(Player1,ReallyForceSpellRES("JOBG402",Player1))
 		//ActionOverride(Player1,ApplySpell(Player1,"NOSTALGIA_DOOR"))
 		Wait(1)	
@@ -39,7 +39,6 @@ THEN
 		FadeToColor([30.0],0)
 		CutSceneId(Player1)
 		Wait(4)
-		MoveViewObject(Player1,INSTANT) // TEST
 		MoveToCenterOfScreen(90)
 		RestorePartyLocations()
 		MoveToCenterOfScreen(90)
@@ -47,6 +46,7 @@ THEN
 		SetGlobal("JOJosterGoBackNow","GLOBAL",0)
 		SetGlobal("JOJosterGetPaid","GLOBAL",0)	
 		ActionOverride(Player1,ReallyForceSpellRES("JOBG402",Player1))
+		MoveViewObject(Player1,INSTANT) // TEST
 		Continue()
 END
 
